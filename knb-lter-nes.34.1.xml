@@ -21,7 +21,7 @@
       <electronicMailAddress>msato@whoi.edu</electronicMailAddress>
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-0217-9898</userId>
     </creator>
-    <associatedParty>
+    <creator>
       <individualName>
         <givenName>Megan</givenName>
         <surName>Ferguson</surName>
@@ -29,9 +29,8 @@
       <organizationName>Northeast U.S. Shelf LTER</organizationName>
       <electronicMailAddress>megan.ferguson@whoi.edu</electronicMailAddress>
       <userId directory="https://orcid.org">https://orcid.org/0009-0002-4496-6600</userId>
-      <role>Technician</role>
-    </associatedParty>
-    <associatedParty>
+    </creator>
+    <creator>
       <individualName>
         <givenName>Sarah</givenName>
         <surName>Zuidema</surName>
@@ -39,8 +38,7 @@
       <organizationName>Northeast U.S. Shelf LTER</organizationName>
       <electronicMailAddress>sarah.zuidema@whoi.edu</electronicMailAddress>
       <userId directory="https://orcid.org">https://orcid.org/0009-0006-0311-0071</userId>
-      <role>Technician</role>
-    </associatedParty>
+    </creator>
     <pubDate>2024-06-12</pubDate>
     <abstract>
       <para>During Northeast U.S. Shelf Long-Term Ecological Research (NES-LTER) Transect cruises, acoustic backscattering layers were identified using multifrequency echosounders and were targeted for collection of zooplankton and micronekton using an Isaacs-Kidd Midwater Trawl. On each cruise, trawling was conducted at at least three stations, including the shelfbreak front, one station inshore, and one offshore to the front. The catches from the trawls were preserved on ship and later identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted to provide net total abundance by taxon. Trawling was initiated in spring 2023 and is ongoing. 
