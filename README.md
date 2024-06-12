@@ -3,5 +3,5 @@ Taxa are morphologically identified and counted from Isaacs-Kidd midwater trawl 
 
 This repository contains the [EMLassemblyline](https://github.com/EDIorg/EMLassemblyline#readme) code to produce a valid [EML](https://eml.ecoinformatics.org/) package for this data for submission to [Environmental Data Intiative repository](https://portal.edirepository.org/nis/home.jsp).
 
-The package is published and available [here](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-nes.23.1).
+
 
