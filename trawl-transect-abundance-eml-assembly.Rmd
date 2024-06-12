@@ -1,0 +1,225 @@
+---
+title: "Minimal EDI package generated using EMLassemblyline and ediutilities"
+author: "Joe Futrelle, Kate Morkeski"
+date: "rsys.date"
+output: html_notebook
+---
+
+Libraries used
+
+```{r}
+# two of the required packages are installed from GitHub
+# library(remotes)
+# remotes::install_github("EDIorg/EMLassemblyline")
+# remotes::install_github("WHOIGit/ediutilities")
+
+library(EMLassemblyline)
+library(ediutilities)
+library(here)
+library(lubridate)
+library(pander)
+library(readr)
+library(dplyr)
+library(stringi)
+library(stringr)
+
+```
+
+Read abundance data table
+
+```{r}
+
+abundance <- read_csv(here('nes-lter-trawl-transect-abundance_input.csv'))
+
+# provide column names for abundance data
+abunheaders <- c(
+"family",
+"verbatimIdentification",
+"cast",
+"cruise",
+"individualCount",
+"split",
+"scientificName",
+"scientificNameID",
+"AphiaID",
+"lifeStage",
+"eventID")
+
+abundance <- read_csv(here('nes-lter-trawl-transect-abundance_input.csv'), col_names = abunheaders)
+abundance <- abundance[-1,]
+
+# define order of columns
+abunheaders <- c(
+"cruise",
+"cast",
+"eventID",
+"family",
+"verbatimIdentification",
+"scientificName",
+"scientificNameID",
+"lifeStage",
+"AphiaID",
+"individualCount",
+"split")
+
+# reorder columns 
+abundance <- abundance[, abunheaders]
+
+# remove "Net" from cast number
+abundance$cast <- gsub("Net", "", abundance$cast)
+
+# remove extra characters from some AphiaID entries
+abundance$AphiaID <- stri_enc_toutf8(abundance$AphiaID, is_unknown_8bit = TRUE, validate = TRUE)
+abundance$AphiaID <- str_trunc(abundance$AphiaID, 6, "right", ellipsis = "")
+
+abundance<- abundance %>% mutate_at(c("cast", 
+                             "AphiaID",
+                             "individualCount"
+                              ), as.numeric)
+
+write_csv(abundance,'nes-lter-trawl-transect-count.csv')
+
+```
+
+Read metadata table
+
+```{r}
+  
+# provide column names for trawl metadata
+metaheaders <- c(
+"cruise",
+"cast",
+"event",
+"no_of_jars", 
+"jar_no_processed",
+"eventDate",
+"depth_tow",
+"station",
+"percent_preserved",
+"decimalLatitudeStart",
+"decimalLongitudeStart",
+"time_in_water",
+"depth_bottom",
+"time_target_depth_start",
+"time_target_depth_stop",
+"max_wire_out",
+"vessel_tow_speed",
+"time_exit_water",
+"decimalLatitudeEnd",
+"decimalLongitudeEnd",
+"cod_end_fullness",
+"preparations")
+
+meta <- read_csv(here('nes-lter-trawl-transect-metadata_input.csv'), col_names = metaheaders)
+meta <- meta[-1,]
+
+# define headers for columns in desired order
+metaheaders <- c(
+"cruise",
+"cast",
+"event",
+"eventDate",
+"station",
+"depth_bottom",
+"depth_tow",
+"decimalLatitudeStart",
+"decimalLongitudeStart",
+"decimalLatitudeEnd",
+"decimalLongitudeEnd",
+"time_in_water",
+"time_exit_water",
+"time_target_depth_start",
+"time_target_depth_stop",
+"max_wire_out",
+"vessel_tow_speed",
+"cod_end_fullness",
+"no_of_jars", 
+"jar_no_processed",
+"percent_preserved",
+"preparations")
+
+# reorder columns 
+meta <- meta[, metaheaders]
+# 
+# meta$time_in_water <- paste(meta$eventDate, meta$time_in_water)
+# #meta$time_in_water <- ymd_hm(meta$time_in_water)
+# meta$time_in_water <- as.POSIXct(meta$time_in_water, tz = "GMT", "%Y-%m-%d %H:%M")
+# 
+# meta$time_exit_water <- paste(meta$eventDate, meta$time_exit_water)
+# meta$time_exit_water <- ymd_hm(meta$time_exit_water)
+# 
+# meta$time_target_depth_start <- paste(meta$eventDate, meta$time_target_depth_start)
+# meta$time_target_depth_start <- ymd_hm(meta$time_target_depth_start)
+# 
+# meta$time_target_depth_stop <- paste(meta$eventDate, meta$time_target_depth_stop)
+# meta$time_target_depth_stop <- ymd_hm(meta$time_target_depth_stop)
+
+meta$eventDate = ymd(meta$eventDate)
+
+meta <- meta %>% mutate(max_wire_out = case_when(max_wire_out == "608-928" ~ "928",
+                                      TRUE ~ max_wire_out)) %>%
+                 mutate(vessel_tow_speed = case_when(vessel_tow_speed == "2-2.3" ~ "2.2",
+                                      TRUE ~ vessel_tow_speed))
+
+meta <- meta %>% mutate_at(c("cast",
+                             "depth_bottom",
+                             "decimalLatitudeStart",
+                             "decimalLongitudeStart",
+                             "decimalLatitudeEnd",
+                             "decimalLongitudeEnd",
+                             "max_wire_out",
+                             "vessel_tow_speed",
+                             "no_of_jars",
+                             "jar_no_processed",
+                             "percent_preserved"), as.numeric)
+
+write_csv(meta,'nes-lter-trawl-transect-metadata.csv')
+
+```
+
+Generate basic summary of data table
+
+```{r}
+# Just for inspecting the summary: change all character columns to factor
+DF <- abundance
+DF[sapply(DF, is.character)] <- lapply(DF[sapply(DF, is.character)], as.factor)
+pander::pander(summary(DF))
+
+sort(unique(abundance$scientificName))
+
+```
+
+Read the Excel metadata template and generate text templates used by
+EMLassemblyline
+
+```{r}
+excel_to_template(here('trawl-transect-info'), 'nes-lter-trawl-transect', rights='CCBY', file_type=".md")
+
+sheet_to_tsv('trawl-transect-info.xlsx', 'ColumnHeadersCount', 'attributes_nes-lter-trawl-transect-count.txt')
+
+sheet_to_tsv('trawl-transect-info.xlsx', 'ColumnHeadersMeta', 'attributes_nes-lter-trawl-transect-metadata.txt')
+ 
+sheet_to_tsv('trawl-transect-info.xlsx', 'CategoricalVariables', 'catvars_nes-lter-trawl-transect-count.txt')           
+
+```
+Generate the package and insert the parent project node into the resulting EML
+
+```{r}
+# generate EML
+pkg_id <- 'knb-lter-nes.34.1'
+
+make_eml(here(),
+         dataset.title='Zooplankton and micronekton abundance using an Isaacs-Kidd Midwater trawl on Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect cruises, ongoing since 2023',
+         data.table= c('nes-lter-trawl-transect-count.csv', 'nes-lter-trawl-transect-metadata.csv'),
+         data.table.description= c('Zooplankton and micronekton abundance', 'Net tow metadata'),
+         data.table.name = c('nes-lter-trawl-transect-abundance', 'nes-lter-trawl-transect-metadata'),
+         temporal.coverage = temporal_coverage(meta$eventDate),
+         geographic.description = "NES-LTER Transect",
+         geographic.coordinates = geographic_coordinates(meta$decimalLatitudeStart, meta$decimalLongitudeStart),
+         maintenance.description = "ongoing",
+         user.id = "NES",
+         user.domain = "LTER",
+         package.id = pkg_id)
+
+project_insert(pkg_id, "parent_project_NESI-II.txt")
+```

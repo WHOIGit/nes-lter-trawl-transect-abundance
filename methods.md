@@ -1,0 +1,11 @@
+# Sample Collection
+
+Direct sampling of acoustic backscattering layers using nets provides taxonomic composition and size distributions necessary to establish acoustic classification of dominant scatterers. Multifrequency echosounders mounted on the ship were used to monitor real-time scattering layer structures and to determine layer depths to be targeted by nets. An Isaacs-Kidd Midwater Trawl (IKMT; Isaacs and Kidd 1953, https://vocab.nerc.ac.uk/collection/L22/current/NETT0071/) with 4-m2 mouth opening was towed at typical speeds of 3.5-4 knots in the vicinity of at least three NES-LTER stations including the shelfbreak front, one station inshore, and one offshore to the front. The combination of the dark color of the net and hardware, the relatively high towing speeds, and the minimal bridle to create a head wake reduces net avoidance behavior by fast-swimming organisms. The depth of each trawl was guided by a real-time pressure sensor (Simrad PX). Some tows followed a single target depth, and some were tow-yos, in which case the target depth is provided as a range. Catches of each trawl were fixed in 10% buffered formalin on deck during Spring and Summer 2023 cruises. Since Fall 2023, the catch was split in half and preserved in 10% buffered formalin and 95% ethanol.Trawling was initiated in spring 2023 and is ongoing. 
+
+# Lab Processing of Samples
+
+In the laboratory, organisms were identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted. Reported abundance represents net total. For the abundant taxa (e.g. euphausiids and amphipods), the samples were split using a Folsom plankton sample splitter until approximately 200 individuals remained in a given split. Those individuals were identified and counted, then counts of each species within that group were multiplied according to their split-fraction to obtain the total abundance in the sample.Typical gelatinous organisms include hydromedusae, siphonophore bracts, and salps. 
+
+# Data Cleaning and Assembly
+
+Where possible, column headers correspond to Darwin Core terms. Package assembly was completed in R; see https://github.com/WHOIGit/nes-lter-trawl-transect-abundance for details. 
