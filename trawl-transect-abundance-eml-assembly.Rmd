@@ -67,6 +67,9 @@ abundance <- abundance[, abunheaders]
 
 # remove "Net" from cast number
 abundance$cast <- gsub("Net", "", abundance$cast)
+# correct spelling
+abundance$family <- gsub("Osteichythes", "Osteichthyes", abundance$family)
+abundance$scientificName <- gsub("Osteichythes", "Osteichthyes", abundance$scientificName)
 
 # remove extra characters from some AphiaID entries
 abundance$AphiaID <- stri_enc_toutf8(abundance$AphiaID, is_unknown_8bit = TRUE, validate = TRUE)
@@ -199,7 +202,18 @@ sheet_to_tsv('trawl-transect-info.xlsx', 'ColumnHeadersCount', 'attributes_nes-l
 
 sheet_to_tsv('trawl-transect-info.xlsx', 'ColumnHeadersMeta', 'attributes_nes-lter-trawl-transect-metadata.txt')
  
-sheet_to_tsv('trawl-transect-info.xlsx', 'CategoricalVariables', 'catvars_nes-lter-trawl-transect-count.txt')           
+sheet_to_tsv('trawl-transect-info.xlsx', 'CategoricalVariables', 'catvars_nes-lter-trawl-transect-count.txt')         
+
+template_taxonomic_coverage(
+  path = here(),
+  data.path = here(),
+  taxa.table = "nes-lter-trawl-transect-count.csv",
+  taxa.col = "scientificName",
+  taxa.name.type = "scientific",
+  taxa.authority = c(9, 3, 11),
+  empty = FALSE,
+  write.file = TRUE
+)
 
 ```
 Generate the package and insert the parent project node into the resulting EML
