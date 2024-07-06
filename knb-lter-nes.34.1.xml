@@ -39,9 +39,9 @@
       <electronicMailAddress>sarah.zuidema@whoi.edu</electronicMailAddress>
       <userId directory="https://orcid.org">https://orcid.org/0009-0006-0311-0071</userId>
     </creator>
-    <pubDate>2024-06-12</pubDate>
+    <pubDate>2024-07-06</pubDate>
     <abstract>
-      <para>During Northeast U.S. Shelf Long-Term Ecological Research (NES-LTER) Transect cruises, acoustic backscattering layers were identified using multifrequency echosounders and were targeted for collection of zooplankton and micronekton using an Isaacs-Kidd Midwater Trawl. On each cruise, trawling was conducted at at least three stations, including the shelfbreak front, one station inshore, and one offshore to the front. The catches from the trawls were preserved on ship and later identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted to provide net total abundance by taxon. Trawling was initiated in spring 2023 and is ongoing. 
+      <para>During Northeast U.S. Shelf Long-Term Ecological Research (NES-LTER) Transect cruises, acoustic backscattering layers were identified using multifrequency echosounders and were targeted for collection of zooplankton and micronekton using an Isaacs-Kidd Midwater Trawl. On each cruise, trawling was conducted at at least three stations, including the one at the shelfbreak front, one inshore of the front, and one offshore of the front. The catches from the trawls were preserved on ship and later identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted to provide net total abundance by taxon. Trawling was initiated in spring 2023 and is ongoing. 
 </para>
     </abstract>
     <keywordSet>
@@ -73,7 +73,7 @@
       <keywordThesaurus>LTER Controlled Vocabulary</keywordThesaurus>
     </keywordSet>
     <additionalInfo>
-      <para>We thank the crews of the research vessels Hugh R. Sharp, Endeavor, and Neil Armstrong for their valued contributions to collecting these data. </para>
+      <para>We thank the captains, crew members, and marine technicians of the research vessels Hugh R. Sharp, Endeavor, and Neil Armstrong for their valued contributions to collecting these data. </para>
     </additionalInfo>
     <intellectualRights>
       <para>This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data ("Data User" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available "as is." The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.
@@ -4650,11 +4650,11 @@
         <description>
           <markdown># Sample Collection
 
-Direct sampling of acoustic backscattering layers using nets provides taxonomic composition and size distributions necessary to establish acoustic classification of dominant scatterers. Multifrequency echosounders mounted on the ship were used to monitor real-time scattering layer structures and to determine layer depths to be targeted by nets. An Isaacs-Kidd Midwater Trawl (IKMT; Isaacs and Kidd 1953, https://vocab.nerc.ac.uk/collection/L22/current/NETT0071/) with 4-m2 mouth opening was towed at typical speeds of 3.5-4 knots in the vicinity of at least three NES-LTER stations including the shelfbreak front, one station inshore, and one offshore to the front. The combination of the dark color of the net and hardware, the relatively high towing speeds, and the minimal bridle to create a head wake reduces net avoidance behavior by fast-swimming organisms. The depth of each trawl was guided by a real-time pressure sensor (Simrad PX). Some tows followed a single target depth, and some were tow-yos, in which case the target depth is provided as a range. Catches of each trawl were fixed in 10% buffered formalin on deck during Spring and Summer 2023 cruises. Since Fall 2023, the catch was split in half and preserved in 10% buffered formalin and 95% ethanol.Trawling was initiated in spring 2023 and is ongoing. 
+Direct sampling of acoustic backscattering layers using nets provides taxonomic composition and size distributions necessary to establish acoustic classification of dominant scatterers. Multifrequency echosounders mounted on the ship were used to monitor real-time scattering layer structures and to determine layer depths to be targeted by nets. An Isaacs-Kidd Midwater Trawl (IKMT; Isaacs and Kidd 1953, https://vocab.nerc.ac.uk/collection/L22/current/NETT0071/) with 4-m2 mouth opening was towed at typical speeds of 3.5-4 knots in the vicinity of at least three NES-LTER stations including the station at the shelfbreak front, one station inshore of the front, and one station offshore of the front. Together the dark color of the net and hardware, the relatively high towing speed, and the minimal bridle to create a head wake reduce net avoidance behavior by fast-swimming organisms. The net was rapidly deployed from surface to target depth to avoid collecting from non-target depths, since the net does not include a closure device. The depth of each trawl was guided by a real-time pressure sensor (Simrad PX). Some tows targeted a single depth, and some were tow-yos, in which the net was towed up and down within a target layer. In the case of a tow-yo, the target depth is provided in the metadata table as a range. During spring and summer 2023 cruises, catches were fixed in 10% buffered formalin on deck. Starting in fall 2023 (cruise AR77), catches were split in half and halves preserved separately in 10% buffered formalin and 95% ethanol. Trawling was initiated in spring 2023 and is ongoing. 
 
 # Lab Processing of Samples
 
-In the laboratory, organisms were identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted. Reported abundance represents net total. For the abundant taxa (e.g. euphausiids and amphipods), the samples were split using a Folsom plankton sample splitter until approximately 200 individuals remained in a given split. Those individuals were identified and counted, then counts of each species within that group were multiplied according to their split-fraction to obtain the total abundance in the sample.Typical gelatinous organisms include hydromedusae, siphonophore bracts, and salps. 
+In the laboratory, organisms were identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted. Reported abundance represents the total individuals caught per cast. For the abundant taxa (e.g. euphausiids and amphipods), the samples were split using a Folsom plankton sample splitter until approximately 200 individuals remained in a given split. Those individuals were identified and counted, then counts of each species within that group were multiplied according to their split-fraction to obtain the total abundance in the sample. Typical gelatinous organisms include hydromedusae, siphonophore bracts, and salps. 
 
 # Data Cleaning and Assembly
 
@@ -4780,8 +4780,8 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
       <entityDescription>Zooplankton and micronekton abundance</entityDescription>
       <physical>
         <objectName>nes-lter-trawl-transect-count.csv</objectName>
-        <size unit="bytes">25268</size>
-        <authentication method="MD5">f06a60a032b3292c2970d240ca3b64a3</authentication>
+        <size unit="bytes">10173</size>
+        <authentication method="MD5">a1ef47c7bbaeb9e622f87e3f2187c97c</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -4795,53 +4795,6 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
       </physical>
       <attributeList>
         <attribute>
-          <attributeName>cruise</attributeName>
-          <attributeDefinition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <textDomain>
-                  <definition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</definition>
-                </textDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-        </attribute>
-        <attribute>
-          <attributeName>cast</attributeName>
-          <attributeDefinition>Trawl number, chronological per cruise, corresponding to cast in ship's event log</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>dimensionless</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>natural</numberType>
-                <bounds>
-                  <minimum exclusive="false">1</minimum>
-                  <maximum exclusive="false">5</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-        </attribute>
-        <attribute>
-          <attributeName>eventID</attributeName>
-          <attributeDefinition>Identifier consisting of cruise identifier and cast http://rs.tdwg.org/dwc/terms/eventID</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <textDomain>
-                  <definition>Identifier consisting of cruise identifier and cast http://rs.tdwg.org/dwc/terms/eventID</definition>
-                </textDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-        </attribute>
-        <attribute>
           <attributeName>family</attributeName>
           <attributeDefinition>Family name of taxon http://rs.tdwg.org/dwc/terms/family</attributeDefinition>
           <storageType>string</storageType>
@@ -4854,10 +4807,6 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
               </nonNumericDomain>
             </nominal>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>Not applicable</codeExplanation>
-          </missingValueCode>
         </attribute>
         <attribute>
           <attributeName>verbatimIdentification</attributeName>
@@ -4886,10 +4835,6 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
               </nonNumericDomain>
             </nominal>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>Not applicable</codeExplanation>
-          </missingValueCode>
         </attribute>
         <attribute>
           <attributeName>scientificNameID</attributeName>
@@ -4904,20 +4849,16 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
               </nonNumericDomain>
             </nominal>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>Not applicable</codeExplanation>
-          </missingValueCode>
         </attribute>
         <attribute>
           <attributeName>lifeStage</attributeName>
-          <attributeDefinition>Taxon life stage http://rs.tdwg.org/dwc/iri/lifeStage</attributeDefinition>
+          <attributeDefinition>Taxon life stage http://rs.tdwg.org/dwc/iri/lifeStage using BODC vocabulary http://vocab.nerc.ac.uk/collection/S11/current/</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <textDomain>
-                  <definition>Taxon life stage http://rs.tdwg.org/dwc/iri/lifeStage</definition>
+                  <definition>Taxon life stage http://rs.tdwg.org/dwc/iri/lifeStage using BODC vocabulary http://vocab.nerc.ac.uk/collection/S11/current/</definition>
                 </textDomain>
               </nonNumericDomain>
             </nominal>
@@ -4942,13 +4883,13 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>Not applicable</codeExplanation>
+            <code>NaN</code>
+            <codeExplanation>Not taxonomically identified</codeExplanation>
           </missingValueCode>
         </attribute>
         <attribute>
-          <attributeName>individualCount</attributeName>
-          <attributeDefinition>Taxon abundance as net total http://rs.tdwg.org/dwc/terms/individualCount</attributeDefinition>
+          <attributeName>HRS2303_1</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -4956,9 +4897,66 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
                 <standardUnit>number</standardUnit>
               </unit>
               <numericDomain>
-                <numberType>natural</numberType>
+                <numberType>whole</numberType>
                 <bounds>
-                  <minimum exclusive="false">1</minimum>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">2464</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>HRS2303_2</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">2128</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>HRS2303_3</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">664</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>EN706_1</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
                   <maximum exclusive="false">6752</maximum>
                 </bounds>
               </numericDomain>
@@ -4966,28 +4964,102 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>split</attributeName>
-          <attributeDefinition>Abundant taxa were counted from a split</attributeDefinition>
-          <storageType>string</storageType>
+          <attributeName>EN706_2</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
           <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <enumeratedDomain>
-                  <codeDefinition>
-                    <code>y</code>
-                    <definition>Taxon was highly abundant and was counted from a split</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>n</code>
-                    <definition>Taxon was not counted from a split</definition>
-                  </codeDefinition>
-                </enumeratedDomain>
-              </nonNumericDomain>
-            </nominal>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">281</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>EN706_3</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">532</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR77_3</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">888</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR77_4</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">3200</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR77_5</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">312</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
           </measurementScale>
         </attribute>
       </attributeList>
-      <numberOfRecords>213</numberOfRecords>
+      <numberOfRecords>85</numberOfRecords>
     </dataTable>
     <dataTable>
       <entityName>nes-lter-trawl-transect-metadata</entityName>
@@ -5303,7 +5375,7 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
         </attribute>
         <attribute>
           <attributeName>no_of_jars</attributeName>
-          <attributeDefinition>The number of vessels the sample was put into</attributeDefinition>
+          <attributeDefinition>The number of sample vessels preserved from the catch</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -5322,7 +5394,7 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
         </attribute>
         <attribute>
           <attributeName>jar_no_processed</attributeName>
-          <attributeDefinition>Which of the sampling jars was processed</attributeDefinition>
+          <attributeDefinition>Identification number of sample vessel processed for identification and counting</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -5360,13 +5432,13 @@ Where possible, column headers correspond to Darwin Core terms. Package assembly
         </attribute>
         <attribute>
           <attributeName>preparations</attributeName>
-          <attributeDefinition>Substance and/or method of preservation of each sample, typically formalin or ethanol </attributeDefinition>
+          <attributeDefinition>Substance and/or method of preservation of each sample, typically formalin or ethanol https://dwc.tdwg.org/list/#dwc_preparations</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <textDomain>
-                  <definition>Substance and/or method of preservation of each sample, typically formalin or ethanol </definition>
+                  <definition>Substance and/or method of preservation of each sample, typically formalin or ethanol https://dwc.tdwg.org/list/#dwc_preparations</definition>
                 </textDomain>
               </nonNumericDomain>
             </nominal>

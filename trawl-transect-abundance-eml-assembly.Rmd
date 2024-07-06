@@ -20,6 +20,7 @@ library(lubridate)
 library(pander)
 library(readr)
 library(dplyr)
+library(tidyr)
 library(stringi)
 library(stringr)
 
@@ -67,20 +68,39 @@ abundance <- abundance[, abunheaders]
 
 # remove "Net" from cast number
 abundance$cast <- gsub("Net", "", abundance$cast)
+
 # correct spelling
 abundance$family <- gsub("Osteichythes", "Osteichthyes", abundance$family)
 abundance$scientificName <- gsub("Osteichythes", "Osteichthyes", abundance$scientificName)
+abundance$lifeStage <- gsub("subadult", "sub-adult", abundance$lifeStage)
+
+# remove "Flat Fish Larvae" from entries in family column
+abundance$family <- gsub("Flat Fish Larvae", NA, abundance$family)
 
 # remove extra characters from some AphiaID entries
 abundance$AphiaID <- stri_enc_toutf8(abundance$AphiaID, is_unknown_8bit = TRUE, validate = TRUE)
 abundance$AphiaID <- str_trunc(abundance$AphiaID, 6, "right", ellipsis = "")
-
-abundance<- abundance %>% mutate_at(c("cast", 
+#convert some columns to numeric 
+abundance<- abundance |> mutate_at(c("cast", 
                              "AphiaID",
                              "individualCount"
                               ), as.numeric)
+# reorder for inspection and pivoting
+ab_verbatim <- abundance[order(abundance$verbatimIdentification),]
+ab_family <- abundance[order(abundance$family),]
 
-write_csv(abundance,'nes-lter-trawl-transect-count.csv')
+abundance <- abundance |> 
+ select(-cruise, -cast, -split) 
+
+ab_wide <- abundance |> 
+ pivot_wider(names_from = eventID,  values_from = individualCount)  
+ab_wide <- ab_wide[order(ab_wide$family, ab_wide$scientificName, ab_wide$verbatimIdentification),]
+
+# replace abundance column NA with 0 # there must be a better way to do this
+ab_wide <- ab_wide |> 
+  replace_na(list(HRS2303_1 = 0, HRS2303_2 = 0, HRS2303_3 = 0, EN706_1 = 0, EN706_2= 0, EN706_3= 0, AR77_3= 0, AR77_4= 0, AR77_5 = 0)) |>
+  replace_na(list(family = "", scientificName = "", scientificNameID = ""))
+write_csv(ab_wide,'nes-lter-trawl-transect-count.csv', na = "NaN")
 
 ```
 
@@ -159,12 +179,12 @@ meta <- meta[, metaheaders]
 
 meta$eventDate = ymd(meta$eventDate)
 
-meta <- meta %>% mutate(max_wire_out = case_when(max_wire_out == "608-928" ~ "928",
-                                      TRUE ~ max_wire_out)) %>%
+meta <- meta |> mutate(max_wire_out = case_when(max_wire_out == "608-928" ~ "928",
+                                      TRUE ~ max_wire_out)) |>
                  mutate(vessel_tow_speed = case_when(vessel_tow_speed == "2-2.3" ~ "2.2",
                                       TRUE ~ vessel_tow_speed))
 
-meta <- meta %>% mutate_at(c("cast",
+meta <- meta |> mutate_at(c("cast",
                              "depth_bottom",
                              "decimalLatitudeStart",
                              "decimalLongitudeStart",
