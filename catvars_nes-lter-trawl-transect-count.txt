@@ -1,0 +1,3 @@
+attributeName	code	definition
+split	y	Taxon was highly abundant and was counted from a split
+split	n	Taxon was not counted from a split

@@ -1,0 +1,23 @@
+attributeName	attributeDefinition	class	unit	dateTimeFormatString	missingValueCode	missingValueCodeExplanation
+cruise	Identifier for research cruise generally including abbreviation for research vessel and voyage number	character				
+cast	Trawl number sequential within cruise	numeric	dimensionless			
+event	Event identifier comprised of cruise and cast	character				
+eventDate	Date the trawl was conducted and the sample preserved	Date		YYYY-MM-DD		
+station	NES-LTER standard station nearest to the sample location	character				
+depth_bottom	Depth of the seafloor in sampling area http://vocab.nerc.ac.uk/collection/P09/current/BATH/	numeric	meter			
+depth_tow	Depth of the tow in meters; if a range, deployment was a towyo http://vocab.nerc.ac.uk/collection/P09/current/DEPH/	character				
+decimalLatitudeStart	Ship’s latitude when net was deployed	numeric	degree			
+decimalLongitudeStart	Ship’s longitude when net was deployed	numeric	degree			
+decimalLatitudeEnd	Ship’s latitude when net was recovered	numeric	degree			
+decimalLongitudeEnd	Ship’s longitude when net was recovered	numeric	degree			
+time_in_water	Time in UTC when trawl net entered the water column	character			NA	Missing value
+time_exit_water	Time in UTC when the trawl net exited the water column	character				
+time_target_depth_start	Time in UTC when the net reached the depth to be sampled and began collecting sample	character				
+time_target_depth_stop	Time in UTC the net left the target depth	character				
+max_wire_out	Maximum length of trawl wire out during tow	numeric	meter			
+vessel_tow_speed	Ship’s speed during tow	numeric	knot			
+cod_end_fullness	Visual estimate of the amount of sample in the collection as a fraction of cod end volume	character				
+no_of_jars	The number of sample vessels preserved from the catch	numeric	number			
+jar_no_processed	Identification number of sample vessel processed for identification and counting	numeric	dimensionless			
+percent_preserved	Percentage of sample preserved	numeric	percent			
+preparations	Substance and/or method of preservation of each sample, typically formalin or ethanol https://dwc.tdwg.org/list/#dwc_preparations	character				
