@@ -26,7 +26,6 @@ vignettes/*.pdf
 *.knit.md
 # R Environment Variables
 .Renviron
-attributes_nes-lter-minimal.txt
 catvars_nes-lter-minimal.txt
 custom_units.txt
 intellectual_rights.txt
