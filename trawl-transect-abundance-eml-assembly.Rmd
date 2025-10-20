@@ -133,6 +133,7 @@ metaheaders <- c(
 "cod_end_fullness",
 "preparations")
 
+# this file comes from "Metadata LTER 2023.xlsx" converted to csv and two non-decimal coordinate values edited to decimal values
 meta <- read_csv(here('nes-lter-trawl-transect-metadata_input.csv'), col_names = metaheaders)
 meta <- meta[-1,]
 
