@@ -30,85 +30,112 @@ Read abundance data table
 
 ```{r}
 
-abundance <- read_csv(here('nes-lter-trawl-transect-abundance_input.csv'))
+# corrected in input file, countsLTER2024fixed_KM.csv: 
+# removed processing notes row from count file and added as a column to metadata file
+# SZ: Additionally I believe I duplicated a species name, Bentheuphausia ambylops, which is a species of krill. It is in the family Bentheuphausiidae and I believe I have that entry once, as well as an entry that calls its family Euphausiidae. Whatever counts exist in both lines should be combined into the Bentheuphausiidae line.
 
-# provide column names for abundance data
-abunheaders <- c(
-"family",
-"verbatimIdentification",
-"cast",
-"cruise",
-"individualCount",
-"split",
-"scientificName",
-"scientificNameID",
-"AphiaID",
-"lifeStage",
-"eventID")
+abundance_23 <- read_csv(here('nes-lter-trawl-transect-count.csv'))
+abundance_24 <- read_csv(here('countsLTER2024fixed_KM.csv'))
 
-abundance <- read_csv(here('nes-lter-trawl-transect-abundance_input.csv'), col_names = abunheaders)
-abundance <- abundance[-1,]
+# Portunid Crabs has two verbatimIDs. 2023 has  "Portunid Crabs (megalops & juveniles)". 2024 has "Portunid Crab Various Life Stages". Combine these into the 2024 verbatimID.
 
-# define order of columns
-abunheaders <- c(
-"cruise",
-"cast",
-"eventID",
-"family",
-"verbatimIdentification",
-"scientificName",
-"scientificNameID",
-"lifeStage",
-"AphiaID",
-"individualCount",
-"split")
+abundance_23$verbatimIdentification <- gsub("Portunid Crabs (megalops & juveniles)", "Portunid Crab Various Life Stages", abundance_23$verbatimIdentification)
 
-# reorder columns 
-abundance <- abundance[, abunheaders]
+# SZ reqests that “Eel Larva” be corrected to say “Eel-like larvae” since it is based on appearance
+# 2023 has Cyclothone and Cyclothone braueri, whereas 2024 has Cyclothones and Cyclothones braueri. Change 2024 to drop the s. 
+# Larva vs Larvae, and other plurals
 
-# remove "Net" from cast number
-abundance$cast <- gsub("Net", "", abundance$cast)
+abundance_23$verbatimIdentification <- gsub("Eel Larva", "Eel-like Larva", abundance_23$verbatimIdentification)
+abundance_23$verbatimIdentification <- gsub("Larvae", "Larva", abundance_23$verbatimIdentification)
+abundance_23$verbatimIdentification <- gsub("megalop", "Megalops", abundance_23$verbatimIdentification)
+abundance_23$verbatimIdentification <- gsub("Megalop", "Megalops", abundance_23$verbatimIdentification)
+abundance_23$verbatimIdentification <- gsub("Megalopss", "Megalops", abundance_23$verbatimIdentification)
+abundance_23$verbatimIdentification <- gsub("Squids", "Squid", abundance_23$verbatimIdentification)
 
-# correct spelling
-abundance$family <- gsub("Osteichythes", "Osteichthyes", abundance$family)
-abundance$scientificName <- gsub("Osteichythes", "Osteichthyes", abundance$scientificName)
-abundance$lifeStage <- gsub("subadult", "sub-adult", abundance$lifeStage)
+abundance_23 <- select(abundance_23, -lifeStage)
 
 # remove "Flat Fish Larvae" from entries in family column
-abundance$family <- gsub("Flat Fish Larvae", NA, abundance$family)
+abundance_24$family <- gsub("Flat Fish Larvae", NA, abundance_24$family)
+abundance_24$verbatimIdentification <- gsub("Eel Larva", "Eel-like Larva", abundance_24$verbatimIdentification)
+abundance_24$verbatimIdentification <- gsub("Cyclothones", "Cyclothone", abundance_24$verbatimIdentification)
+abundance_24$scientificName <- gsub("Cyclothones", "Cyclothone", abundance_24$scientificName)
+abundance_24$verbatimIdentification <- gsub("megalop", "Megalops", abundance_24$verbatimIdentification)
+abundance_24$verbatimIdentification <- gsub("Larvae", "Larva", abundance_24$verbatimIdentification)
+abundance_24$verbatimIdentification <- gsub("Megalop", "Megalops", abundance_24$verbatimIdentification)
+abundance_24$verbatimIdentification <- gsub("Megalopss", "Megalops", abundance_24$verbatimIdentification)
+abundance_24$verbatimIdentification <- gsub("Squids", "Squid", abundance_24$verbatimIdentification)
 
-# remove extra characters from some AphiaID entries
-abundance$AphiaID <- stri_enc_toutf8(abundance$AphiaID, is_unknown_8bit = TRUE, validate = TRUE)
-abundance$AphiaID <- str_trunc(abundance$AphiaID, 6, "right", ellipsis = "")
-#convert some columns to numeric 
-abundance<- abundance |> mutate_at(c("cast", 
-                             "AphiaID",
-                             "individualCount"
-                              ), as.numeric)
-# reorder for inspection and pivoting
-ab_verbatim <- abundance[order(abundance$verbatimIdentification),]
-ab_family <- abundance[order(abundance$family),]
+abundance_24 <- select(abundance_24, -scientificNameID, -AphiaID)
 
-abundance <- abundance |> 
- select(-cruise, -cast, -split) 
+unique(abundance_23$verbatimIdentification)
+unique(abundance_24$verbatimIdentification)
 
-ab_wide <- abundance |> 
- pivot_wider(names_from = eventID,  values_from = individualCount)  
-ab_wide <- ab_wide[order(ab_wide$family, ab_wide$scientificName, ab_wide$verbatimIdentification),]
+unique(abundance_23$scientificName)
+unique(abundance_24$scientificName)
+
+abundance_23 <- abundance_23[order(abundance_23$family, abundance_23$scientificName, abundance_23$verbatimIdentification),]
+abundance_24 <- abundance_24[order(abundance_24$family, abundance_24$scientificName, abundance_24$verbatimIdentification),]
+
+unique(abundance_23$scientificName)
+unique(abundance_24$scientificName)
+
+#abundance_23$scientificName == abundance_24$scientificName
+
+names <- full_join(abundance_23, abundance_24, by = c("scientificName", "verbatimIdentification", "family"))
+
+#matches <- inner_join(abundance_23, abundance_24, by = c("scientificName", "verbatimIdentification"))
+#matches_verb <- inner_join(abundance_23, abundance_24, by = c("verbatimIdentification"))
+
+names <- names[order(names$family, names$scientificName, names$verbatimIdentification),]
+
+sum(is.na(names$scientificNameID))
+
+needs_aphia <- filter(names, is.na(names$scientificNameID))
+
+write_csv(names,'nes-lter-trawl-transect-count_needs_aphia.csv', na = "NaN")
+
+
+#names <- read_csv(here('nes-lter-trawl-transect-count_has_aphia.csv'))
 
 # replace abundance column NA with 0 # there must be a better way to do this
-ab_wide <- ab_wide |> 
-  replace_na(list(HRS2303_1 = 0, HRS2303_2 = 0, HRS2303_3 = 0, EN706_1 = 0, EN706_2= 0, EN706_3= 0, AR77_3= 0, AR77_4= 0, AR77_5 = 0)) |>
+#count_cols <- abundance_2324[6:24]
+names <- names |> 
+  replace_na(list(HRS2303_1 = 0, HRS2303_2 = 0, HRS2303_3 = 0, EN706_1 = 0, EN706_2= 0, EN706_3= 0, AR77_3= 0, AR77_4= 0, AR77_5 = 0, EN712_2 = 0, EN715_3 = 0, EN715_6 = 0, EN715_7 = 0, EN720_1 = 0, EN720_2 = 0, EN720_3 = 0, AE2426_1 = 0, AE2426_2 = 0, AE2426_4 = 0)) |>
   replace_na(list(family = "", scientificName = "", scientificNameID = ""))
-write_csv(ab_wide,'nes-lter-trawl-transect-count.csv', na = "NaN")
+
+write_csv(names,'nes-lter-trawl-transect-count-v2.csv', na = "NaN")
 
 ```
 
-Read metadata table
+Read metadata 
+
+## 2023
 
 ```{r}
-  
-# provide column names for trawl metadata
+
+meta_23 <- read_csv(here('nes-lter-trawl-transect-metadata.csv'))
+
+#meta_23 <- read_csv(here('nes-lter-trawl-transect-metadata.csv'), col_types = c("c","n","c","D","c","n","c","n","n","n","n","c","c","c","c","c","c","c","n","n","n","c","c"))
+
+meta_23$time_in_water <- as.character(meta_23$time_in_water)
+meta_23$time_exit_water <- as.character(meta_23$time_exit_water)
+meta_23$time_target_depth_start <- as.character(meta_23$time_target_depth_start)
+meta_23$time_target_depth_stop <- as.character(meta_23$time_target_depth_stop)
+
+meta_23$time_in_water <- substr(meta_23$time_in_water, 1, 5)
+meta_23$time_exit_water <- substr(meta_23$time_exit_water, 1, 5) 
+meta_23$time_target_depth_start <- substr(meta_23$time_target_depth_start, 1, 5)
+meta_23$time_target_depth_stop <- substr(meta_23$time_target_depth_stop, 1, 5)
+
+meta_23$processing_notes <- as.character(NA)
+meta_23$jar_no_processed <- as.character(meta_23$jar_no_processed)
+
+```
+## 2024
+
+```{r}
+
+# provide column names for new trawl metadata
 metaheaders <- c(
 "cruise",
 "cast",
@@ -131,11 +158,14 @@ metaheaders <- c(
 "decimalLatitudeEnd",
 "decimalLongitudeEnd",
 "cod_end_fullness",
-"preparations")
+"preparations",
+"processing_notes")
 
-# this file comes from "Metadata LTER 2023.xlsx" converted to csv and two non-decimal coordinate values edited to decimal values
-meta <- read_csv(here('nes-lter-trawl-transect-metadata_input.csv'), col_names = metaheaders)
-meta <- meta[-1,]
+# Kate manually edited metadata2024fixed.csv provided by Sarah:
+# removed processing_notes column from count file and added to this file
+# edited preparations and processing_notes columns to remove commas
+meta_24 <- read_csv(here('metadata2024fixed_KM.csv'), col_names = metaheaders)
+meta_24 <- meta_24[-1,]
 
 # define headers for columns in desired order
 metaheaders <- c(
@@ -160,32 +190,39 @@ metaheaders <- c(
 "no_of_jars", 
 "jar_no_processed",
 "percent_preserved",
-"preparations")
-
+"preparations",
+"processing_notes")
 # reorder columns 
-meta <- meta[, metaheaders]
-# 
-# meta$time_in_water <- paste(meta$eventDate, meta$time_in_water)
-# #meta$time_in_water <- ymd_hm(meta$time_in_water)
-# meta$time_in_water <- as.POSIXct(meta$time_in_water, tz = "GMT", "%Y-%m-%d %H:%M")
-# 
-# meta$time_exit_water <- paste(meta$eventDate, meta$time_exit_water)
-# meta$time_exit_water <- ymd_hm(meta$time_exit_water)
-# 
-# meta$time_target_depth_start <- paste(meta$eventDate, meta$time_target_depth_start)
-# meta$time_target_depth_start <- ymd_hm(meta$time_target_depth_start)
-# 
-# meta$time_target_depth_stop <- paste(meta$eventDate, meta$time_target_depth_stop)
-# meta$time_target_depth_stop <- ymd_hm(meta$time_target_depth_stop)
+meta_24 <- meta_24[, metaheaders]
 
-meta$eventDate = ymd(meta$eventDate)
+meta_24$eventDate <- mdy(meta_24$eventDate)
 
-meta <- meta |> mutate(max_wire_out = case_when(max_wire_out == "608-928" ~ "928",
+# 2024 metadata corrections to range:
+meta_24 <- meta_24 |> mutate(depth_tow = case_when(depth_tow == "29 (18-42)" ~ "18-42",
+                                      TRUE ~ depth_tow)) |>
+                mutate(depth_tow = case_when(depth_tow == "103 (91-127)" ~ "91-127",
+                                      TRUE ~ depth_tow))
+
+# 2024 metadata corrections to numeric value:
+meta_24 <- meta_24 |> mutate(max_wire_out = case_when(max_wire_out == "120,165,115" ~ "165",
                                       TRUE ~ max_wire_out)) |>
-                 mutate(vessel_tow_speed = case_when(vessel_tow_speed == "2-2.3" ~ "2.2",
+                mutate(max_wire_out = case_when(max_wire_out == "207->130" ~ "207",
+                                      TRUE ~ max_wire_out)) |>
+                mutate(vessel_tow_speed = case_when(vessel_tow_speed == "3.5-3.0-2.5-3.2-3.5-3.0" ~ "3.1", #average
+                                      TRUE ~ vessel_tow_speed)) |>
+                mutate(vessel_tow_speed = case_when(vessel_tow_speed == "~3.5" ~ "3.5", 
+                                      TRUE ~ vessel_tow_speed)) |>
+                mutate(vessel_tow_speed = case_when(vessel_tow_speed == "3.5->3" ~ "3.3", # rough average
                                       TRUE ~ vessel_tow_speed))
 
-meta <- meta |> mutate_at(c("cast",
+# # 2023 metadata corrections to numeric value:
+# meta <- meta |> mutate(max_wire_out = case_when(max_wire_out == "608-928" ~ "928",
+#                                       TRUE ~ max_wire_out)) |>
+#                  mutate(vessel_tow_speed = case_when(vessel_tow_speed == "2-2.3" ~ "2.2",
+#                                       TRUE ~ vessel_tow_speed))
+
+
+meta_24 <- meta_24 |> mutate_at(c("cast",
                              "depth_bottom",
                              "decimalLatitudeStart",
                              "decimalLongitudeStart",
@@ -194,10 +231,11 @@ meta <- meta |> mutate_at(c("cast",
                              "max_wire_out",
                              "vessel_tow_speed",
                              "no_of_jars",
-                             "jar_no_processed",
                              "percent_preserved"), as.numeric)
 
-write_csv(meta,'nes-lter-trawl-transect-metadata.csv')
+meta <- rbind(meta_23, meta_24)
+
+write_csv(meta,'nes-lter-trawl-transect-metadata-v2.csv')
 
 ```
 
@@ -205,11 +243,11 @@ Generate basic summary of data table
 
 ```{r}
 # Just for inspecting the summary: change all character columns to factor
-DF <- abundance
+DF <- names
 DF[sapply(DF, is.character)] <- lapply(DF[sapply(DF, is.character)], as.factor)
 pander::pander(summary(DF))
 
-sort(unique(abundance$scientificName))
+sort(unique(DF$scientificName))
 
 ```
 
@@ -217,18 +255,18 @@ Read the Excel metadata template and generate text templates used by
 EMLassemblyline
 
 ```{r}
-excel_to_template(here('trawl-transect-info'), 'nes-lter-trawl-transect', rights='CCBY', file_type=".md")
+excel_to_template(here('trawl-transect-info-v2'), 'nes-lter-trawl-transect-v2', rights='CCBY', file_type=".md")
 
-sheet_to_tsv('trawl-transect-info.xlsx', 'ColumnHeadersCount', 'attributes_nes-lter-trawl-transect-count.txt')
+sheet_to_tsv('trawl-transect-info-v2.xlsx', 'ColumnHeadersCount', 'attributes_nes-lter-trawl-transect-count-v2.txt')
 
-sheet_to_tsv('trawl-transect-info.xlsx', 'ColumnHeadersMeta', 'attributes_nes-lter-trawl-transect-metadata.txt')
+sheet_to_tsv('trawl-transect-info-v2.xlsx', 'ColumnHeadersMeta', 'attributes_nes-lter-trawl-transect-metadata-v2.txt')
  
-sheet_to_tsv('trawl-transect-info.xlsx', 'CategoricalVariables', 'catvars_nes-lter-trawl-transect-count.txt')         
+sheet_to_tsv('trawl-transect-info-v2.xlsx', 'CategoricalVariables', 'catvars_nes-lter-trawl-transect-count-v2.txt')         
 
 template_taxonomic_coverage(
   path = here(),
   data.path = here(),
-  taxa.table = "nes-lter-trawl-transect-count.csv",
+  taxa.table = "nes-lter-trawl-transect-count-v2.csv",
   taxa.col = "scientificName",
   taxa.name.type = "scientific",
   taxa.authority = c(9, 3, 11),
@@ -241,13 +279,13 @@ Generate the package and insert the parent project node into the resulting EML
 
 ```{r}
 # generate EML
-pkg_id <- 'knb-lter-nes.34.1'
+pkg_id <- 'knb-lter-nes.34.2'
 
 make_eml(here(),
          dataset.title='Zooplankton and micronekton abundance using an Isaacs-Kidd Midwater trawl on Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect cruises, ongoing since 2023',
-         data.table= c('nes-lter-trawl-transect-count.csv', 'nes-lter-trawl-transect-metadata.csv'),
+         data.table= c('nes-lter-trawl-transect-count-v2.csv', 'nes-lter-trawl-transect-metadata-v2.csv'),
          data.table.description= c('Zooplankton and micronekton abundance', 'Net tow metadata'),
-         data.table.name = c('nes-lter-trawl-transect-abundance', 'nes-lter-trawl-transect-metadata'),
+         data.table.name = c('nes-lter-trawl-transect-abundance-v2', 'nes-lter-trawl-transect-metadata-v2'),
          temporal.coverage = temporal_coverage(meta$eventDate),
          geographic.description = "NES-LTER Transect",
          geographic.coordinates = geographic_coordinates(meta$decimalLatitudeStart, meta$decimalLongitudeStart),
@@ -257,4 +295,7 @@ make_eml(here(),
          package.id = pkg_id)
 
 project_insert(pkg_id, "parent_project_NESI-II.txt")
+
+issues()
 ```
+

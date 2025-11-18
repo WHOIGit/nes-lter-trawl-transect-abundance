@@ -1,1 +1,1 @@
-We thank the captains, crew members, and marine technicians of the research vessels Hugh R. Sharp, Endeavor, and Neil Armstrong for their valued contributions to collecting these data. 
+We thank the captains, crew members, and marine technicians of the research vessels Atlantic Explorer, Endeavor, Hugh R. Sharp, and Neil Armstrong, for their valued contributions to collecting these data. 

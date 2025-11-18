@@ -9,3 +9,6 @@ In the laboratory, organisms were identified to the lowest possible taxonomic le
 # Data Cleaning and Assembly
 
 Where possible, column headers correspond to Darwin Core terms. Package assembly was completed in R; see https://github.com/WHOIGit/nes-lter-trawl-transect-abundance for details. 
+# Differences from Previous Version
+
+Data from all four NES cruises in 2024 were added. This addition included 39 taxa new to the data set. The lifeStage column included in version 1 was eliminated. 
