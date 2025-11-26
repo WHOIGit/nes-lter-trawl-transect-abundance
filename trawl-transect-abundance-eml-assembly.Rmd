@@ -30,42 +30,36 @@ Read abundance data table
 
 ```{r}
 
-# corrected in input file, countsLTER2024fixed_KM.csv: 
-# removed processing notes row from count file and added as a column to metadata file
-# SZ: Additionally I believe I duplicated a species name, Bentheuphausia ambylops, which is a species of krill. It is in the family Bentheuphausiidae and I believe I have that entry once, as well as an entry that calls its family Euphausiidae. Whatever counts exist in both lines should be combined into the Bentheuphausiidae line.
+# copied processing notes row from 2024abundanceforreal.csv and added as a column to metadata file
 
-abundance_23 <- read_csv(here('nes-lter-trawl-transect-count.csv'))
-abundance_24 <- read_csv(here('countsLTER2024fixed_KM.csv'))
+abundance_23 <- read_csv(here('2023abundanceforreal.csv'))
+abundance_24 <- read_csv(here('2024abundanceforreal.csv'))
 
-# Portunid Crabs has two verbatimIDs. 2023 has  "Portunid Crabs (megalops & juveniles)". 2024 has "Portunid Crab Various Life Stages". Combine these into the 2024 verbatimID.
+abundance_23 <- select(abundance_23, -lifeStage) # remove life stage column
+abundance_24 <- abundance_24[-116,] # remove row of notes
+abundance_24 <- abundance_24 |> mutate(across(6:last_col(), ~ as.numeric(.x)))
+abundance_24 <- select(abundance_24, -scientificNameID, -AphiaID)
 
-abundance_23$verbatimIdentification <- gsub("Portunid Crabs (megalops & juveniles)", "Portunid Crab Various Life Stages", abundance_23$verbatimIdentification)
+abundance_23$family <- gsub("Oxycephalus", "Oxycephalidae", abundance_23$family) # correct spelling
+abundance_23$verbatimIdentification <- gsub("shrimp", "Shrimp", abundance_23$verbatimIdentification) # capitalize
+abundance_23$scientificName <- gsub("shrimp", "Shrimp", abundance_23$scientificName) # capitalize
 
-# SZ reqests that “Eel Larva” be corrected to say “Eel-like larvae” since it is based on appearance
-# 2023 has Cyclothone and Cyclothone braueri, whereas 2024 has Cyclothones and Cyclothones braueri. Change 2024 to drop the s. 
-# Larva vs Larvae, and other plurals
-
-abundance_23$verbatimIdentification <- gsub("Eel Larva", "Eel-like Larva", abundance_23$verbatimIdentification)
-abundance_23$verbatimIdentification <- gsub("Larvae", "Larva", abundance_23$verbatimIdentification)
-abundance_23$verbatimIdentification <- gsub("megalop", "Megalops", abundance_23$verbatimIdentification)
-abundance_23$verbatimIdentification <- gsub("Megalop", "Megalops", abundance_23$verbatimIdentification)
-abundance_23$verbatimIdentification <- gsub("Megalopss", "Megalops", abundance_23$verbatimIdentification)
-abundance_23$verbatimIdentification <- gsub("Squids", "Squid", abundance_23$verbatimIdentification)
-
-abundance_23 <- select(abundance_23, -lifeStage)
-
-# remove "Flat Fish Larvae" from entries in family column
-abundance_24$family <- gsub("Flat Fish Larvae", NA, abundance_24$family)
-abundance_24$verbatimIdentification <- gsub("Eel Larva", "Eel-like Larva", abundance_24$verbatimIdentification)
+abundance_24$family <- gsub("Flat Fish Larvae", NA, abundance_24$family) # remove "Flat Fish Larvae" from entries in family column
+abundance_24$family <- gsub("Antenariidae", "Antennariidae", abundance_24$family) # correct spelling
+abundance_24$verbatimIdentification <- gsub("Nematoscelis", "Hansarsia", abundance_24$verbatimIdentification) # correct genus to accepted name
+abundance_24$scientificName <- gsub("Nematoscelis", "Hansarsia", abundance_24$scientificName) # correct genus to accepted name
+abundance_24$verbatimIdentification <- gsub("juvenile", "Juvenile", abundance_24$verbatimIdentification)
+abundance_24$scientificName <- gsub(" juvenile", "", abundance_24$scientificName)
+abundance_24$verbatimIdentification <- gsub("megalopa", "Megalopa", abundance_24$verbatimIdentification)
 abundance_24$verbatimIdentification <- gsub("Cyclothones", "Cyclothone", abundance_24$verbatimIdentification)
 abundance_24$scientificName <- gsub("Cyclothones", "Cyclothone", abundance_24$scientificName)
-abundance_24$verbatimIdentification <- gsub("megalop", "Megalops", abundance_24$verbatimIdentification)
-abundance_24$verbatimIdentification <- gsub("Larvae", "Larva", abundance_24$verbatimIdentification)
-abundance_24$verbatimIdentification <- gsub("Megalop", "Megalops", abundance_24$verbatimIdentification)
-abundance_24$verbatimIdentification <- gsub("Megalopss", "Megalops", abundance_24$verbatimIdentification)
-abundance_24$verbatimIdentification <- gsub("Squids", "Squid", abundance_24$verbatimIdentification)
 
-abundance_24 <- select(abundance_24, -scientificNameID, -AphiaID)
+# put in order
+abundance_23 <- abundance_23[order(abundance_23$family, abundance_23$scientificName, abundance_23$verbatimIdentification),]
+abundance_24 <- abundance_24[order(abundance_24$family, abundance_24$scientificName, abundance_24$verbatimIdentification),]
+
+unique(abundance_23$family)
+unique(abundance_24$family)
 
 unique(abundance_23$verbatimIdentification)
 unique(abundance_24$verbatimIdentification)
@@ -73,37 +67,41 @@ unique(abundance_24$verbatimIdentification)
 unique(abundance_23$scientificName)
 unique(abundance_24$scientificName)
 
-abundance_23 <- abundance_23[order(abundance_23$family, abundance_23$scientificName, abundance_23$verbatimIdentification),]
-abundance_24 <- abundance_24[order(abundance_24$family, abundance_24$scientificName, abundance_24$verbatimIdentification),]
+abundance <- full_join(abundance_23, abundance_24, by = c("scientificName", "verbatimIdentification", "family"))
 
-unique(abundance_23$scientificName)
-unique(abundance_24$scientificName)
+abundance <- abundance[order(abundance$family, abundance$scientificName, abundance$verbatimIdentification),]
 
-#abundance_23$scientificName == abundance_24$scientificName
+unique(abundance$family)
+unique(abundance$verbatimIdentification)
+unique(abundance$scientificName)
 
-names <- full_join(abundance_23, abundance_24, by = c("scientificName", "verbatimIdentification", "family"))
+sum(is.na(abundance$scientificNameID))
 
-#matches <- inner_join(abundance_23, abundance_24, by = c("scientificName", "verbatimIdentification"))
-#matches_verb <- inner_join(abundance_23, abundance_24, by = c("verbatimIdentification"))
+#needs_aphia <- filter(abundance, is.na(abundance$scientificNameID))
 
-names <- names[order(names$family, names$scientificName, names$verbatimIdentification),]
+#write_csv(abundance,'nes-lter-trawl-transect-count_needs_aphia.csv', na = "NaN")
+# write_csv(needs_aphia,'nes-lter-trawl-transect-count_needs_aphia.csv', na = "NaN")
 
-sum(is.na(names$scientificNameID))
+aphia <- read_csv(here('nes-lter-trawl-transect-count_has_aphia.csv'))
+aphia <- aphia[order(aphia$family, aphia$scientificName, aphia$verbatimIdentification),]
+colnames(aphia)
+colnames(aphia) <- c("family24","verbatimIdentification", "scientificName24","scientificNameID24","AphiaID24","Comments")
 
-needs_aphia <- filter(names, is.na(names$scientificNameID))
+abundance <- left_join(abundance, aphia, by = 'verbatimIdentification')
+check_id <- abundance[-(6:24)]
+# for visual check of results # looks good
 
-write_csv(names,'nes-lter-trawl-transect-count_needs_aphia.csv', na = "NaN")
+# populate blank rows in scientificNameID and AphiaID
+abundance <-abundance |> 
+  mutate(scientificNameID = case_when(is.na(scientificNameID) ~ scientificNameID24, TRUE ~ scientificNameID)) |>
+  mutate(AphiaID = case_when(is.na(AphiaID) ~ AphiaID24, TRUE ~ AphiaID)) |>
+  select(-family24, -scientificName24,-scientificNameID24,-AphiaID24,-Comments)
 
+# replace na with zero in count columns 
+abundance <- abundance |> mutate(across(6:last_col(), ~ replace_na(.x, 0))) |>
+                          replace_na(list(family = "", scientificName = "", scientificNameID = ""))
 
-#names <- read_csv(here('nes-lter-trawl-transect-count_has_aphia.csv'))
-
-# replace abundance column NA with 0 # there must be a better way to do this
-#count_cols <- abundance_2324[6:24]
-names <- names |> 
-  replace_na(list(HRS2303_1 = 0, HRS2303_2 = 0, HRS2303_3 = 0, EN706_1 = 0, EN706_2= 0, EN706_3= 0, AR77_3= 0, AR77_4= 0, AR77_5 = 0, EN712_2 = 0, EN715_3 = 0, EN715_6 = 0, EN715_7 = 0, EN720_1 = 0, EN720_2 = 0, EN720_3 = 0, AE2426_1 = 0, AE2426_2 = 0, AE2426_4 = 0)) |>
-  replace_na(list(family = "", scientificName = "", scientificNameID = ""))
-
-write_csv(names,'nes-lter-trawl-transect-count-v2.csv', na = "NaN")
+write_csv(abundance,'nes-lter-trawl-transect-count-v2.csv', na = "NaN")
 
 ```
 
