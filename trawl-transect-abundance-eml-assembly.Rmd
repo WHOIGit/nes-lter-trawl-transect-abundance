@@ -113,8 +113,6 @@ Read metadata
 
 meta_23 <- read_csv(here('nes-lter-trawl-transect-metadata.csv'))
 
-#meta_23 <- read_csv(here('nes-lter-trawl-transect-metadata.csv'), col_types = c("c","n","c","D","c","n","c","n","n","n","n","c","c","c","c","c","c","c","n","n","n","c","c"))
-
 meta_23$time_in_water <- as.character(meta_23$time_in_water)
 meta_23$time_exit_water <- as.character(meta_23$time_exit_water)
 meta_23$time_target_depth_start <- as.character(meta_23$time_target_depth_start)
@@ -127,6 +125,8 @@ meta_23$time_target_depth_stop <- substr(meta_23$time_target_depth_stop, 1, 5)
 
 meta_23$processing_notes <- as.character(NA)
 meta_23$jar_no_processed <- as.character(meta_23$jar_no_processed)
+
+meta_23$cod_end_fullness <- paste0("\"",meta_23$cod_end_fullness, "\"" )
 
 ```
 ## 2024
@@ -219,6 +219,10 @@ meta_24 <- meta_24 |> mutate(max_wire_out = case_when(max_wire_out == "120,165,1
 #                  mutate(vessel_tow_speed = case_when(vessel_tow_speed == "2-2.3" ~ "2.2",
 #                                       TRUE ~ vessel_tow_speed))
 
+
+meta_24$cod_end_fullness <- str_replace_all(meta_24$cod_end_fullness, pattern = "\"", replacement = "")
+
+meta_24$cod_end_fullness <- paste0("\"",meta_24$cod_end_fullness, "\"" )
 
 meta_24 <- meta_24 |> mutate_at(c("cast",
                              "depth_bottom",

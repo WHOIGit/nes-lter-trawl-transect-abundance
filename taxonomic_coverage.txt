@@ -1,76 +1,104 @@
 name	name_type	name_resolved	authority_system	authority_id
-Osteichthyes	scientific	Osteichthyes	World Register of Marine Species	152352
 Ammodytes sp.	scientific	Ammodytes	World Register of Marine Species	125909
-Clionidae	scientific	Clionidae	World Register of Marine Species	166
+Histrio histrio	scientific	Histrio histrio	World Register of Marine Species	126533
+Atlanta sp.	scientific	Atlanta	World Register of Marine Species	137687
+Bathylagidae	scientific	Bathylagidae	World Register of Marine Species	125509
+Bentheuphausia amblyops	scientific	Bentheuphausia amblyops	World Register of Marine Species	110681
+Bramidae	scientific	Bramidae	World Register of Marine Species	125520
+Calappidae	scientific	Calappidae	World Register of Marine Species	106747
+Callianassidae	scientific	Callianassidae	World Register of Marine Species	106800
+Cavolinia sp.	scientific	Cavolinia	World Register of Marine Species	137750
+Diacavolinia longirostris	scientific	Diacavolinia longirostris	World Register of Marine Species	405962
+Clio pyramidata f. lanceolata	scientific	Clio pyramidata f. lanceolata	World Register of Marine Species	397044
+Clione sp.	scientific	Clione	World Register of Marine Species	719191
+Clionidae	scientific	Clionidae	World Register of Marine Species	131669
 Cliopsidae	scientific	Cliopsidae	World Register of Marine Species	23007
-Meganyctiphanes norvegica	scientific	Meganyctiphanes norvegica	World Register of Marine Species	110690
-Euphausiidae	scientific	Euphausiidae	World Register of Marine Species	110671
-Pandalidae	scientific	Pandalidae	World Register of Marine Species	106789
-Multicrustacea	scientific	Multicrustacea	World Register of Marine Species	845959
-Themisto compressa	scientific	Themisto compressa	World Register of Marine Species	156451
-NA	scientific	NA	NA	NA
-Copepoda	scientific	Copepoda	World Register of Marine Species	1080
-Thysanoessa longicaudata	scientific	Thysanoessa longicaudata	World Register of Marine Species	110709
-Belzebub faxoni	scientific	Belzebub faxoni	World Register of Marine Species	883867
-Phronima atlantica	scientific	Phronima atlantica	World Register of Marine Species	103271
-Phronima sedentaria	scientific	Phronima sedentaria	World Register of Marine Species	103272
-Phronima stebbingi	scientific	Phronima stebbingi	World Register of Marine Species	236609
-Phronima sp.	scientific	Phronima	World Register of Marine Species	101804
-Phrosina semilunata	scientific	Phrosina semilunata	World Register of Marine Species	103273
-Anomura	scientific	Anomura	World Register of Marine Species	106671
-Achelata	scientific	Achelata	World Register of Marine Species	383017
-Stomatopoda	scientific	Stomatopoda	World Register of Marine Species	14355
-Mysida	scientific	Mysida	World Register of Marine Species	149668
-Chaetognatha	scientific	Chaetognatha	World Register of Marine Species	2081
-Portunidae	scientific	Portunidae	World Register of Marine Species	106763
-Coleoidea	scientific	Coleoidea	World Register of Marine Species	11709
+Cranchiidae	scientific	Cranchiidae	World Register of Marine Species	11774
+Leachia sp.	scientific	Leachia	World Register of Marine Species	137850
 Diacria trispinosa	scientific	Diacria trispinosa	World Register of Marine Species	139045
-Pterotrachea sp.	scientific	Pterotrachea	World Register of Marine Species	138009
-Hansarsia sp.	scientific	Hansarsia	World Register of Marine Species	1649781
-Thysanoessa sp.	scientific	Thysanoessa	World Register of Marine Species	110679
+Dorippidae	scientific	Dorippidae	World Register of Marine Species	106754
+Abraliopsis sp.	scientific	Abraliopsis	World Register of Marine Species	137931
+Libinia emarginata	scientific	Libinia emarginata	World Register of Marine Species	158426
 Euphausia krohnii	scientific	Euphausia krohnii	World Register of Marine Species	110687
 Euphausia mutica	scientific	Euphausia mutica	World Register of Marine Species	110688
+Euphausia sp.	scientific	Euphausia	World Register of Marine Species	110673
+Euphausia triacantha	scientific	Euphausia triacantha	World Register of Marine Species	236220
+Euphausiidae	scientific	Euphausiidae	World Register of Marine Species	110671
+Hansarsia sp.	scientific	Hansarsia	World Register of Marine Species	1649781
+Meganyctiphanes norvegica	scientific	Meganyctiphanes norvegica	World Register of Marine Species	110690
+Nematobrachion sp.	scientific	Nematobrachion	World Register of Marine Species	110675
+Stylocheiron maximum	scientific	Stylocheiron maximum	World Register of Marine Species	110704
+Stylocheiron robustum	scientific	Stylocheiron robustum	World Register of Marine Species	110705
+Stylocheiron sp.	scientific	Stylocheiron	World Register of Marine Species	110678
+Thysanoessa longicaudata	scientific	Thysanoessa longicaudata	World Register of Marine Species	110709
+Thysanoessa raschii	scientific	Thysanoessa raschii	World Register of Marine Species	110711
+Thysanoessa sp.	scientific	Thysanoessa	World Register of Marine Species	110679
 Thysanopoda sp.	scientific	Thysanopoda	World Register of Marine Species	110680
-Sergestidae	scientific	Sergestidae	World Register of Marine Species	106731
-Hyperia sp.	scientific	Hyperia	World Register of Marine Species	835292
-Hyperoche sp.	scientific	Hyperoche	World Register of Marine Species	101798
-Calappidae	scientific	Calappidae	World Register of Marine Species	106747
-Ostracoda	scientific	Ostracoda	World Register of Marine Species	1078
-Latreilliidae	scientific	Latreilliidae	World Register of Marine Species	106745
-Parthenopidae	scientific	Parthenopidae	World Register of Marine Species	106761
+Cyclothone braueri	scientific	Cyclothone braueri	World Register of Marine Species	127284
+Cyclothone sp.	scientific	Cyclothone	World Register of Marine Species	126187
 Hippidae	scientific	Hippidae	World Register of Marine Species	158390
+Hyperia sp.	scientific	Hyperia	World Register of Marine Species	835292
+Hyperiidae	scientific	Hyperiidae	World Register of Marine Species	101417
+Hyperoche sp.	scientific	Hyperoche	World Register of Marine Species	101798
+Themisto compressa	scientific	Themisto compressa	World Register of Marine Species	156451
+Idiosepiidae	scientific	Idiosepiidae	World Register of Marine Species	153037
+Latreilliidae	scientific	Latreilliidae	World Register of Marine Species	106745
+Leucosiidae	scientific	Leucosiidae	World Register of Marine Species	106758
+Limacina sp.	scientific	Limacina	World Register of Marine Species	138122
+Belzebub faxoni	scientific	Belzebub faxoni	World Register of Marine Species	883867
+Lucifer typus	scientific	Lucifer typus	World Register of Marine Species	107122
+Luciferidae	scientific	Luciferidae	World Register of Marine Species	106730
+Maurolicus sp.	scientific	Maurolicus	World Register of Marine Species	126197
+Valenciennellus tripunctulatus	scientific	Valenciennellus tripunctulatus	World Register of Marine Species	127316
+Melamphaidae	scientific	Melamphaidae	World Register of Marine Species	125599
+Merluccius sp.	scientific	Merluccius	World Register of Marine Species	125762
 Myctophidae	scientific	Myctophidae	World Register of Marine Species	125498
+Nemichthyidae	scientific	Nemichthyidae	World Register of Marine Species	125432
+Nomeidae	scientific	Nomeidae	World Register of Marine Species	125548
+Oxycephalus clausi	scientific	Oxycephalus clausi	World Register of Marine Species	220731
+Oxycephalus sp.	scientific	Oxycephalus	World Register of Marine Species	206128
+Rhabdosoma sp.	scientific	Rhabdosoma	World Register of Marine Species	205957
+Rhabdosoma whitei	scientific	Rhabdosoma whitei	World Register of Marine Species	220733
+Streetsia sp.	scientific	Streetsia	World Register of Marine Species	236591
+Pandalidae	scientific	Pandalidae	World Register of Marine Species	106789
+Parthenopidae	scientific	Parthenopidae	World Register of Marine Species	106761
+Peristediidae	scientific	Peristediidae	World Register of Marine Species	125592
+Vinciguerria nimbaria	scientific	Vinciguerria nimbaria	World Register of Marine Species	127303
+Phronima atlantica	scientific	Phronima atlantica	World Register of Marine Species	103271
+Phronima sedentaria	scientific	Phronima sedentaria	World Register of Marine Species	103272
+Phronima sp.	scientific	Phronima	World Register of Marine Species	101804
+Phronima stebbingi	scientific	Phronima stebbingi	World Register of Marine Species	236609
+Phrosina semilunata	scientific	Phrosina semilunata	World Register of Marine Species	103273
+Portunidae	scientific	Portunidae	World Register of Marine Species	106763
+Pterotrachea sp.	scientific	Pterotrachea	World Register of Marine Species	138009
+Pyrosomatidae	scientific	Pyrosomatidae	World Register of Marine Species	137216
+Scina sp.	scientific	Scina	World Register of Marine Species	101810
+Scomberesox saurus	scientific	Scomberesox saurus	World Register of Marine Species	126392
+Scopelarchus sp.	scientific	Scopelarchus	World Register of Marine Species	125683
+Scyllaridae	scientific	Scyllaridae	World Register of Marine Species	106795
+Heteroteuthis sp.	scientific	Heteroteuthis	World Register of Marine Species	138478
+Sergestidae	scientific	Sergestidae	World Register of Marine Species	106731
+Solenoceridae	scientific	Solenoceridae	World Register of Marine Species	106729
 Argyropelecus hemigymnus	scientific	Argyropelecus hemigymnus	World Register of Marine Species	127309
 Argyropelecus sp.	scientific	Argyropelecus	World Register of Marine Species	126196
-Valenciennellus tripunctulatus	scientific	Valenciennellus tripunctulatus	World Register of Marine Species	127316
-Chauliodus sloani	scientific	Chauliodus sloani	World Register of Marine Species	127338
-Cyclothone sp.	scientific	Cyclothone	World Register of Marine Species	126187
-Cyclothone braueri	scientific	Cyclothone braueri	World Register of Marine Species	127284
-Heteroteuthis sp.	scientific	Heteroteuthis	World Register of Marine Species	138478
-Limacina sp.	scientific	Limacina	World Register of Marine Species	138122
-Clio pyramidata f. lanceolata	scientific	Clio pyramidata f. lanceolata	World Register of Marine Species	397044
-Stylocheiron maximum	scientific	Stylocheiron maximum	World Register of Marine Species	110704
-Stylocheiron sp.	scientific	Stylocheiron	World Register of Marine Species	110678
-Thysanoessa raschii	scientific	Thysanoessa raschii	World Register of Marine Species	110711
-Euphausia sp.	scientific	Euphausia	World Register of Marine Species	110673
-Luciferidae	scientific	Luciferidae	World Register of Marine Species	106730
-Rhabdosoma whitei	scientific	Rhabdosoma whitei	World Register of Marine Species	220733
-Malacostraca	scientific	Malacostraca	World Register of Marine Species	1071
-Abraliopsis sp.	scientific	Abraliopsis	World Register of Marine Species	137931
-Gastropoda	scientific	Gastropoda	World Register of Marine Species	101
-Oxycephalus clausi	scientific	Oxycephalus clausi	World Register of Marine Species	220731
-Leucosiidae	scientific	Leucosiidae	World Register of Marine Species	106758
-Scyllaridae	scientific	Scyllaridae	World Register of Marine Species	106795
-Dorippidae	scientific	Dorippidae	World Register of Marine Species	106754
-Nemichthyidae	scientific	Nemichthyidae	World Register of Marine Species	125432
-Maurolicus sp.	scientific	Maurolicus	World Register of Marine Species	126197
-Scopelarchus sp.	scientific	Scopelarchus	World Register of Marine Species	125683
 Chauliodus minimus	scientific	Chauliodus minimus	World Register of Marine Species	275056
-Vinciguerria nimbaria	scientific	Vinciguerria nimbaria	World Register of Marine Species	127303
-Cavolinia sp.	scientific	Cavolinia	World Register of Marine Species	137750
+Chauliodus sloani	scientific	Chauliodus sloani	World Register of Marine Species	127338
+Achelata	scientific	Achelata	World Register of Marine Species	383017
+Amphipoda	scientific	Amphipoda	World Register of Marine Species	1135
+Anomura	scientific	Anomura	World Register of Marine Species	106671
+Caridea	scientific	Caridea	World Register of Marine Species	106674
+Chaetognatha	scientific	Chaetognatha	World Register of Marine Species	2081
+Clionoidea	scientific	Clionoidea	World Register of Marine Species	411912
+Coleoidea	scientific	Coleoidea	World Register of Marine Species	11709
+Copepoda	scientific	Copepoda	World Register of Marine Species	1080
+Gastropoda	scientific	Gastropoda	World Register of Marine Species	101
+Malacostraca	scientific	Malacostraca	World Register of Marine Species	1071
+Multicrustacea	scientific	Multicrustacea	World Register of Marine Species	845959
+Mysida	scientific	Mysida	World Register of Marine Species	149668
+Osteichthyes	scientific	Osteichthyes	World Register of Marine Species	152352
+Ostracoda	scientific	Ostracoda	World Register of Marine Species	1078
+Phaeodaria	scientific	Phaeodaria	World Register of Marine Species	345868
+Platysceloidea	scientific	Platysceloidea	World Register of Marine Species	155698
 Pteropoda	scientific	Pteropoda	World Register of Marine Species	325345
-Stylocheiron robustum	scientific	Stylocheiron robustum	World Register of Marine Species	110705
-Scina sp.	scientific	Scina	World Register of Marine Species	101810
-Bramidae	scientific	Bramidae	World Register of Marine Species	125520
-Merluccius sp.	scientific	Merluccius	World Register of Marine Species	125762
-Scomberesox saurus	scientific	Scomberesox saurus	World Register of Marine Species	126392
+Stomatopoda	scientific	Stomatopoda	World Register of Marine Species	14355
+	scientific	NA	NA	NA
