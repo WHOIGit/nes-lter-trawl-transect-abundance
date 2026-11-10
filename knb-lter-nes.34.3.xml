@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-nes.34.2" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd" system="edi">
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-nes.34.3" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd" system="edi">
   <access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document">
     <allow>
       <principal>uid=NES,o=LTER,dc=ecoinformatics,dc=org</principal>
@@ -39,7 +39,7 @@
       <electronicMailAddress>sarah.zuidema@whoi.edu</electronicMailAddress>
       <userId directory="https://orcid.org">https://orcid.org/0009-0006-0311-0071</userId>
     </creator>
-    <pubDate>2025-12-02</pubDate>
+    <pubDate>2026-11-09</pubDate>
     <abstract>
       <para>During Northeast U.S. Shelf Long-Term Ecological Research (NES-LTER) Transect cruises, acoustic backscattering layers were identified using multifrequency echosounders and were targeted for collection of zooplankton and micronekton using an Isaacs-Kidd Midwater Trawl. On each cruise, trawling was conducted at at least three stations, including the one at the shelfbreak front, one inshore of the front, and one offshore of the front. The catches from the trawls were preserved on ship and later identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted to provide net total abundance by taxon. Trawling was initiated in spring 2023 and is ongoing. 
 </para>
@@ -84,9 +84,9 @@
         <geographicDescription>NES-LTER Transect</geographicDescription>
         <boundingCoordinates>
           <westBoundingCoordinate>-70.93136</westBoundingCoordinate>
-          <eastBoundingCoordinate>-70.86146</eastBoundingCoordinate>
+          <eastBoundingCoordinate>70.88734</eastBoundingCoordinate>
           <northBoundingCoordinate>40.51669</northBoundingCoordinate>
-          <southBoundingCoordinate>39.7693</southBoundingCoordinate>
+          <southBoundingCoordinate>39.76171</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <temporalCoverage>
@@ -95,7 +95,7 @@
             <calendarDate>2023-05-03</calendarDate>
           </beginDate>
           <endDate>
-            <calendarDate>2024-11-10</calendarDate>
+            <calendarDate>2025-10-22</calendarDate>
           </endDate>
         </rangeOfDates>
       </temporalCoverage>
@@ -137,22 +137,17 @@
                         <taxonId provider="http://marinespecies.org">293496</taxonId>
                         <taxonomicClassification>
                           <taxonRankName>Order</taxonRankName>
-                          <taxonRankValue>Perciformes</taxonRankValue>
-                          <taxonId provider="http://marinespecies.org">11014</taxonId>
+                          <taxonRankValue>Uranoscopiformes</taxonRankValue>
+                          <taxonId provider="http://marinespecies.org">1915903</taxonId>
                           <taxonomicClassification>
-                            <taxonRankName>Suborder</taxonRankName>
-                            <taxonRankValue>Uranoscopoidei</taxonRankValue>
-                            <taxonId provider="http://marinespecies.org">1617139</taxonId>
+                            <taxonRankName>Family</taxonRankName>
+                            <taxonRankValue>Ammodytidae</taxonRankValue>
+                            <commonName>sand lances</commonName>
+                            <taxonId provider="http://marinespecies.org">125516</taxonId>
                             <taxonomicClassification>
-                              <taxonRankName>Family</taxonRankName>
-                              <taxonRankValue>Ammodytidae</taxonRankValue>
-                              <commonName>sand lances</commonName>
-                              <taxonId provider="http://marinespecies.org">125516</taxonId>
-                              <taxonomicClassification>
-                                <taxonRankName>Genus</taxonRankName>
-                                <taxonRankValue>Ammodytes</taxonRankValue>
-                                <taxonId provider="http://marinespecies.org">125909</taxonId>
-                              </taxonomicClassification>
+                              <taxonRankName>Genus</taxonRankName>
+                              <taxonRankValue>Ammodytes</taxonRankValue>
+                              <taxonId provider="http://marinespecies.org">125909</taxonId>
                             </taxonomicClassification>
                           </taxonomicClassification>
                         </taxonomicClassification>
@@ -435,10 +430,15 @@
                           <taxonRankValue>Scombriformes</taxonRankValue>
                           <taxonId provider="http://marinespecies.org">1517490</taxonId>
                           <taxonomicClassification>
-                            <taxonRankName>Family</taxonRankName>
-                            <taxonRankValue>Bramidae</taxonRankValue>
-                            <commonName>pomfrets</commonName>
-                            <taxonId provider="http://marinespecies.org">125520</taxonId>
+                            <taxonRankName>Suborder</taxonRankName>
+                            <taxonRankValue>Scombroidei</taxonRankValue>
+                            <taxonId provider="http://marinespecies.org">151748</taxonId>
+                            <taxonomicClassification>
+                              <taxonRankName>Family</taxonRankName>
+                              <taxonRankValue>Bramidae</taxonRankValue>
+                              <commonName>pomfrets</commonName>
+                              <taxonId provider="http://marinespecies.org">125520</taxonId>
+                            </taxonomicClassification>
                           </taxonomicClassification>
                         </taxonomicClassification>
                       </taxonomicClassification>
@@ -3427,14 +3427,14 @@
                           <taxonRankValue>Gadiformes</taxonRankValue>
                           <taxonId provider="http://marinespecies.org">10313</taxonId>
                           <taxonomicClassification>
-                            <taxonRankName>Family</taxonRankName>
-                            <taxonRankValue>Merlucciidae</taxonRankValue>
-                            <commonName>merluccid hakes</commonName>
-                            <taxonId provider="http://marinespecies.org">125473</taxonId>
+                            <taxonRankName>Suborder</taxonRankName>
+                            <taxonRankValue>Merluccioidei</taxonRankValue>
+                            <taxonId provider="http://marinespecies.org">1865953</taxonId>
                             <taxonomicClassification>
-                              <taxonRankName>Subfamily</taxonRankName>
-                              <taxonRankValue>Merlucciinae</taxonRankValue>
-                              <taxonId provider="http://marinespecies.org">154235</taxonId>
+                              <taxonRankName>Family</taxonRankName>
+                              <taxonRankValue>Merlucciidae</taxonRankValue>
+                              <commonName>merluccid hakes</commonName>
+                              <taxonId provider="http://marinespecies.org">125473</taxonId>
                               <taxonomicClassification>
                                 <taxonRankName>Genus</taxonRankName>
                                 <taxonRankValue>Merluccius</taxonRankValue>
@@ -3545,10 +3545,15 @@
                           <taxonRankValue>Anguilliformes</taxonRankValue>
                           <taxonId provider="http://marinespecies.org">10295</taxonId>
                           <taxonomicClassification>
-                            <taxonRankName>Family</taxonRankName>
-                            <taxonRankValue>Nemichthyidae</taxonRankValue>
-                            <commonName>snipe eels</commonName>
-                            <taxonId provider="http://marinespecies.org">125432</taxonId>
+                            <taxonRankName>Suborder</taxonRankName>
+                            <taxonRankValue>Anguilloidei</taxonRankValue>
+                            <taxonId provider="http://marinespecies.org">1912895</taxonId>
+                            <taxonomicClassification>
+                              <taxonRankName>Family</taxonRankName>
+                              <taxonRankValue>Nemichthyidae</taxonRankValue>
+                              <commonName>snipe eels</commonName>
+                              <taxonId provider="http://marinespecies.org">125432</taxonId>
+                            </taxonomicClassification>
                           </taxonomicClassification>
                         </taxonomicClassification>
                       </taxonomicClassification>
@@ -3599,10 +3604,15 @@
                           <taxonRankValue>Scombriformes</taxonRankValue>
                           <taxonId provider="http://marinespecies.org">1517490</taxonId>
                           <taxonomicClassification>
-                            <taxonRankName>Family</taxonRankName>
-                            <taxonRankValue>Nomeidae</taxonRankValue>
-                            <commonName>driftfishes</commonName>
-                            <taxonId provider="http://marinespecies.org">125548</taxonId>
+                            <taxonRankName>Suborder</taxonRankName>
+                            <taxonRankValue>Stromateoidei</taxonRankValue>
+                            <taxonId provider="http://marinespecies.org">151749</taxonId>
+                            <taxonomicClassification>
+                              <taxonRankName>Family</taxonRankName>
+                              <taxonRankValue>Nomeidae</taxonRankValue>
+                              <commonName>driftfishes</commonName>
+                              <taxonId provider="http://marinespecies.org">125548</taxonId>
+                            </taxonomicClassification>
                           </taxonomicClassification>
                         </taxonomicClassification>
                       </taxonomicClassification>
@@ -4199,8 +4209,8 @@
                           <taxonId provider="http://marinespecies.org">11014</taxonId>
                           <taxonomicClassification>
                             <taxonRankName>Suborder</taxonRankName>
-                            <taxonRankValue>Scorpaenoidei</taxonRankValue>
-                            <taxonId provider="http://marinespecies.org">154247</taxonId>
+                            <taxonRankValue>Trigloidei</taxonRankValue>
+                            <taxonId provider="http://marinespecies.org">1860391</taxonId>
                             <taxonomicClassification>
                               <taxonRankName>Family</taxonRankName>
                               <taxonRankValue>Peristediidae</taxonRankValue>
@@ -6307,14 +6317,16 @@ Direct sampling of acoustic backscattering layers using nets provides taxonomic 
 &#13;
 # Lab Processing of Samples&#13;
 &#13;
-In the laboratory, organisms were identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted. Reported abundance represents the total individuals caught per cast. For the abundant taxa (e.g. euphausiids and amphipods), the samples were split using a Folsom plankton sample splitter until approximately 200 individuals remained in a given split. Those individuals were identified and counted, then counts of each species within that group were multiplied according to their split-fraction to obtain the total abundance in the sample. Typical gelatinous organisms include hydromedusae, siphonophore bracts, and salps. &#13;
+In the laboratory, organisms preserved in formalin were identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted. When the catch was split between ethanol and formalin preservation, only the formalin portion was processed for morphological identification, and appropriate volume-based multiplication was applied to determine the total count in the cast. Reported abundance represents the total individuals caught per cast. For the abundant taxa (e.g. euphausiids and amphipods), the samples were split using a Folsom plankton sample splitter until approximately 200 individuals remained in a given split. Those individuals were identified and counted, then counts of each species within that group were multiplied according to their split-fraction to obtain the total abundance in the sample.  Typical gelatinous organisms include hydromedusae, siphonophore bracts, and salps. &#13;
 &#13;
 # Data Cleaning and Assembly&#13;
 &#13;
-Where possible, column headers correspond to Darwin Core terms. Package assembly was completed in R; see https://github.com/WHOIGit/nes-lter-trawl-transect-abundance for details. &#13;
+Where possible, column headers correspond to Darwin Core terms. Package assembly was completed in R; see https://github.com/WHOIGit/nes-lter-trawl-transect-abundance for details. Average vessel tow speed is approximated from handwritten notes, and the value for a given sample may be either speed through the water or speed over ground. Taxonomic information, including verbatimID, was regularized for spelling and WORMS accepted identification, as well as life stage or other descriptor where relevant. &#13;
 # Differences from Previous Version&#13;
 &#13;
-Data from all four NES cruises in 2024 were added. This addition included 33 taxa new to the data set. The lifeStage column included in version 1 was eliminated. The counts from event AR77_4 were all corrected by a factor of 2 in version 2. Some verbatimID entries were edited.&#13;
+In version 3, data from all four cruises in 2025 were added, adding 44 new taxa to the data set. The former column eventDate was adjusted to two columns to account for tows ending after midnight UTC. Further regularization was done with regard to spelling, accepted identification, family, and life stage or other descriptor.&#13;
+&#13;
+In version 2, data from all four NES cruises in 2024 were added. This addition included 33 taxa new to the data set. The lifeStage column included in version 1 was eliminated. The counts from event AR77_4 were all corrected by a factor of 2 in version 2. Some verbatimID entries were edited.&#13;
 </markdown>
         </description>
       </methodStep>
@@ -6432,12 +6444,12 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
       </relatedProject>
     </project>
     <dataTable>
-      <entityName>nes-lter-trawl-transect-abundance-v2</entityName>
+      <entityName>nes-lter-trawl-transect-abundance-v3</entityName>
       <entityDescription>Zooplankton and micronekton abundance</entityDescription>
       <physical>
-        <objectName>nes-lter-trawl-transect-count-v2.csv</objectName>
-        <size unit="bytes">15675</size>
-        <authentication method="MD5">62dd8d8e551f482dade5adb90abf38ae</authentication>
+        <objectName>nes-lter-trawl-transect-count-v3.csv</objectName>
+        <size unit="bytes">25912</size>
+        <authentication method="MD5">fc01dabc794b94b1205679e317c67606</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -6519,7 +6531,7 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
                 <numberType>natural</numberType>
                 <bounds>
                   <minimum exclusive="false">101</minimum>
-                  <maximum exclusive="false">883867</maximum>
+                  <maximum exclusive="false">1525496</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -6890,16 +6902,263 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
             </ratio>
           </measurementScale>
         </attribute>
+        <attribute>
+          <attributeName>EN727_1</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">984</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>EN727_2</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">1005</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>EN727_4</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">910</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR88_2</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">1427</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR88_4</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">744</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR88_8</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">166</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR92_3</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">1980</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR92_4</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">882</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR92_5</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">1142</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR92_7</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">373</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR95_2</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">4176</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR95_3</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">1026</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AR95_6</attributeName>
+          <attributeDefinition>Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">513</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
       </attributeList>
-      <numberOfRecords>118</numberOfRecords>
+      <numberOfRecords>162</numberOfRecords>
     </dataTable>
     <dataTable>
-      <entityName>nes-lter-trawl-transect-metadata-v2</entityName>
+      <entityName>nes-lter-trawl-transect-metadata-v3</entityName>
       <entityDescription>Net tow metadata</entityDescription>
       <physical>
-        <objectName>nes-lter-trawl-transect-metadata-v2.csv</objectName>
-        <size unit="bytes">6277</size>
-        <authentication method="MD5">477b4eb810cbabb56eef4e8c5b69fed4</authentication>
+        <objectName>nes-lter-trawl-transect-metadata-v3.csv</objectName>
+        <size unit="bytes">11003</size>
+        <authentication method="MD5">5846b628a37290018e2c3cd60674c93f</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -6939,7 +7198,7 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
                 <numberType>natural</numberType>
                 <bounds>
                   <minimum exclusive="false">1</minimum>
-                  <maximum exclusive="false">7</maximum>
+                  <maximum exclusive="false">8</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -6960,8 +7219,19 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>eventDate</attributeName>
-          <attributeDefinition>Date the trawl was conducted and the sample preserved</attributeDefinition>
+          <attributeName>eventDateStart</attributeName>
+          <attributeDefinition>UTC date the trawl was initiated and the sample preserved</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>eventDateEnd</attributeName>
+          <attributeDefinition>UTC date the trawl was completed and the sample preserved, if different from the date on which the trawl was initiated</attributeDefinition>
           <storageType>date</storageType>
           <measurementScale>
             <dateTime>
@@ -6997,7 +7267,7 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
                 <numberType>natural</numberType>
                 <bounds>
                   <minimum exclusive="false">72</minimum>
-                  <maximum exclusive="false">1615</maximum>
+                  <maximum exclusive="false">1673</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -7029,7 +7299,7 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">39.769298</minimum>
+                  <minimum exclusive="false">39.761712</minimum>
                   <maximum exclusive="false">40.516693</maximum>
                 </bounds>
               </numericDomain>
@@ -7053,7 +7323,7 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">-70.93136</minimum>
-                  <maximum exclusive="false">-70.86146</maximum>
+                  <maximum exclusive="false">70.887339</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -7071,8 +7341,8 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">39.7718</minimum>
-                  <maximum exclusive="false">40.520722</maximum>
+                  <minimum exclusive="false">39.695665</minimum>
+                  <maximum exclusive="false">40.539819</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -7090,8 +7360,8 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">-70.961517</minimum>
-                  <maximum exclusive="false">-70.82594</maximum>
+                  <minimum exclusive="false">-70.97708</minimum>
+                  <maximum exclusive="false">70.888472</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -7167,7 +7437,7 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
                 <standardUnit>meter</standardUnit>
               </unit>
               <numericDomain>
-                <numberType>real</numberType>
+                <numberType>natural</numberType>
                 <bounds>
                   <minimum exclusive="false">70</minimum>
                   <maximum exclusive="false">1775</maximum>
@@ -7189,7 +7459,7 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">2.2</minimum>
-                  <maximum exclusive="false">4</maximum>
+                  <maximum exclusive="false">4.6</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -7294,14 +7564,14 @@ Data from all four NES cruises in 2024 were added. This addition included 33 tax
           </missingValueCode>
         </attribute>
       </attributeList>
-      <numberOfRecords>19</numberOfRecords>
+      <numberOfRecords>32</numberOfRecords>
     </dataTable>
   </dataset>
   <additionalMetadata>
     <metadata>
       <emlEditor>
         <app>EMLassemblyline</app>
-        <release>3.5.7</release>
+        <release>3.6.0</release>
       </emlEditor>
     </metadata>
   </additionalMetadata>

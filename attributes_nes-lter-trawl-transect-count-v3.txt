@@ -1,0 +1,38 @@
+attributeName	attributeDefinition	class	unit	dateTimeFormatString	missingValueCode	missingValueCodeExplanation
+family	Family name of taxon http://rs.tdwg.org/dwc/terms/family	character				
+verbatimIdentification	Taxon descriptive name  http://rs.tdwg.org/dwc/terms/verbatimIdentification	character				
+scientificName	Taxon scientific name http://rs.tdwg.org/dwc/terms/scientificName	character				
+scientificNameID	Taxon scientific name identifier http://rs.tdwg.org/dwc/terms/scientificNameID	character				
+AphiaID	Aphia ID	numeric	dimensionless		NaN	Not taxonomically identified
+HRS2303_1	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+HRS2303_2	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+HRS2303_3	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN706_1	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN706_2	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN706_3	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR77_3	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR77_4	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR77_5	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN712_2	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN715_3	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN715_6	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN715_7	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN720_1	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN720_2	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN720_3	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AE2426_1	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AE2426_2	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AE2426_4	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN727_1	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN727_2	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+EN727_4	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR88_2	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR88_4	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR88_8	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR92_3	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR92_4	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR92_5	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR92_7	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR95_2	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR95_3	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
+AR95_6	Taxon abundance as total number of individuals caught in trawl net from event corresponding to column name	numeric	number			
