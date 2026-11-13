@@ -273,29 +273,7 @@ write_csv(abundance_fam,'nes-lter-trawl-transect-count-v3.csv', na = "NaN")
 
 Read metadata 
 
-## 2023
-
-```{r}
-
-# meta_23 <- read_csv(here('nes-lter-trawl-transect-metadata.csv'))
-# 
-# meta_23$time_in_water <- as.character(meta_23$time_in_water)
-# meta_23$time_exit_water <- as.character(meta_23$time_exit_water)
-# meta_23$time_target_depth_start <- as.character(meta_23$time_target_depth_start)
-# meta_23$time_target_depth_stop <- as.character(meta_23$time_target_depth_stop)
-# 
-# meta_23$time_in_water <- substr(meta_23$time_in_water, 1, 5)
-# meta_23$time_exit_water <- substr(meta_23$time_exit_water, 1, 5) 
-# meta_23$time_target_depth_start <- substr(meta_23$time_target_depth_start, 1, 5)
-# meta_23$time_target_depth_stop <- substr(meta_23$time_target_depth_stop, 1, 5)
-# 
-# meta_23$processing_notes <- as.character(NA)
-# meta_23$jar_no_processed <- as.character(meta_23$jar_no_processed)
-# 
-# meta_23$cod_end_fullness <- paste0("\"",meta_23$cod_end_fullness, "\"" )
-
-```
-## 2024
+## 2025
 
 ```{r}
 
@@ -328,6 +306,8 @@ metaheaders25 <- c(
 
 meta_25 <- read_csv(('input/metadata2025.csv'), col_names = metaheaders25)
 meta_25 <- meta_25[-1,]
+meta_25$preparations <- gsub(",", ";", meta_25$preparations)
+meta_25$processing_notes <- gsub(",", ";", meta_25$processing_notes)
 
 # define headers for columns in desired order
 metaheaders <- c(
@@ -361,41 +341,9 @@ meta_25 <- meta_25[, metaheaders]
 meta_25$eventDateStart <- mdy(meta_25$eventDateStart)
 meta_25$eventDateEnd <- mdy(meta_25$eventDateEnd)
 
-meta_25$time_target_depth_start <- str_pad(meta_25$time_target_depth_start, width = 5, side = "left", pad = "0") #meta_25$time_target_depth_start <- str_pad(meta_25$time_target_depth_start, width = 6, side = "right", pad = ":")
-#meta_25$time_target_depth_start <- str_pad(meta_25$time_target_depth_start, width = 8, side = "right", pad = "0")
+meta_25$time_target_depth_start <- str_pad(meta_25$time_target_depth_start, width = 5, side = "left", pad = "0") 
 
 meta_25$time_target_depth_stop <- str_pad(meta_25$time_target_depth_stop, width = 5, side = "left", pad = "0")
-#meta_25$time_target_depth_stop <- str_pad(meta_25$time_target_depth_stop, width = 6, side = "right", pad = ":")
-#meta_25$time_target_depth_stop <- str_pad(meta_25$time_target_depth_stop, width = 8, side = "right", pad = "0")
-
-# # 2024 metadata corrections to range:
-# meta_24 <- meta_24 |> mutate(depth_tow = case_when(depth_tow == "29 (18-42)" ~ "18-42",
-#                                                    TRUE ~ depth_tow)) |>
-#   mutate(depth_tow = case_when(depth_tow == "103 (91-127)" ~ "91-127",
-#                                TRUE ~ depth_tow))
-
-# # 2024 metadata corrections to numeric value:
-# meta_24 <- meta_24 |> mutate(max_wire_out = case_when(max_wire_out == "120,165,115" ~ "165",
-#                                                       TRUE ~ max_wire_out)) |>
-#   mutate(max_wire_out = case_when(max_wire_out == "207->130" ~ "207",
-#                                   TRUE ~ max_wire_out)) |>
-#   mutate(vessel_tow_speed = case_when(vessel_tow_speed == "3.5-3.0-2.5-3.2-3.5-3.0" ~ "3.1", #average
-#                                       TRUE ~ vessel_tow_speed)) |>
-#   mutate(vessel_tow_speed = case_when(vessel_tow_speed == "~3.5" ~ "3.5", 
-#                                       TRUE ~ vessel_tow_speed)) |>
-#   mutate(vessel_tow_speed = case_when(vessel_tow_speed == "3.5->3" ~ "3.3", # rough average
-#                                       TRUE ~ vessel_tow_speed))
-
-# # 2023 metadata corrections to numeric value:
-# meta <- meta |> mutate(max_wire_out = case_when(max_wire_out == "608-928" ~ "928",
-#                                       TRUE ~ max_wire_out)) |>
-#                  mutate(vessel_tow_speed = case_when(vessel_tow_speed == "2-2.3" ~ "2.2",
-#                                       TRUE ~ vessel_tow_speed))
-
-
-#meta_24$cod_end_fullness <- str_replace_all(meta_24$cod_end_fullness, pattern = "\"", replacement = "")
-
-#meta_24$cod_end_fullness <- paste0("\"",meta_24$cod_end_fullness, "\"" )
 
 meta_25 <- meta_25 |> mutate_at(c("cast",
                                   "depth_bottom",
@@ -487,7 +435,7 @@ make_eml(here(),
          data.table= c('nes-lter-trawl-transect-count-v3.csv', 'nes-lter-trawl-transect-metadata-v3.csv'),
          data.table.description= c('Zooplankton and micronekton abundance', 'Net tow metadata'),
          data.table.name = c('nes-lter-trawl-transect-abundance-v3', 'nes-lter-trawl-transect-metadata-v3'),
-         temporal.coverage = temporal_coverage(meta$eventDate),
+         temporal.coverage = temporal_coverage(meta$eventDateStart),
          geographic.description = "NES-LTER Transect",
          geographic.coordinates = geographic_coordinates(meta$decimalLatitudeStart, meta$decimalLongitudeStart),
          maintenance.description = "ongoing",

@@ -39,7 +39,7 @@
       <electronicMailAddress>sarah.zuidema@whoi.edu</electronicMailAddress>
       <userId directory="https://orcid.org">https://orcid.org/0009-0006-0311-0071</userId>
     </creator>
-    <pubDate>2026-11-09</pubDate>
+    <pubDate>2026-11-13</pubDate>
     <abstract>
       <para>During Northeast U.S. Shelf Long-Term Ecological Research (NES-LTER) Transect cruises, acoustic backscattering layers were identified using multifrequency echosounders and were targeted for collection of zooplankton and micronekton using an Isaacs-Kidd Midwater Trawl. On each cruise, trawling was conducted at at least three stations, including the one at the shelfbreak front, one inshore of the front, and one offshore of the front. The catches from the trawls were preserved on ship and later identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted to provide net total abundance by taxon. Trawling was initiated in spring 2023 and is ongoing. 
 </para>
@@ -73,7 +73,7 @@
       <keywordThesaurus>LTER Controlled Vocabulary</keywordThesaurus>
     </keywordSet>
     <additionalInfo>
-      <para>We thank the captains, crew members, and marine technicians of the research vessels Atlantic Explorer, Endeavor, Hugh R. Sharp, and Neil Armstrong, for their valued contributions to collecting these data. </para>
+      <para>We thank the captains, crew members, and marine technicians of the research vessels Atlantic Explorer, Endeavor, Hugh R. Sharp, and Neil Armstrong for their valued contributions to collecting these data. </para>
     </additionalInfo>
     <intellectualRights>
       <para>This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data ("Data User" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available "as is." The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.
@@ -6313,7 +6313,7 @@
         <description>
           <markdown># Sample Collection&#13;
 &#13;
-Direct sampling of acoustic backscattering layers using nets provides taxonomic composition and size distributions necessary to establish acoustic classification of dominant scatterers. Multifrequency echosounders mounted on the ship were used to monitor real-time scattering layer structures and to determine layer depths to be targeted by nets. An Isaacs-Kidd Midwater Trawl (IKMT; Isaacs and Kidd 1953, https://vocab.nerc.ac.uk/collection/L22/current/NETT0071/) with 4-m2 mouth opening was towed at typical speeds of 3.5-4 knots in the vicinity of at least three NES-LTER stations including the station at the shelfbreak front, one station inshore of the front, and one station offshore of the front. Together the dark color of the net and hardware, the relatively high towing speed, and the minimal bridle to create a head wake reduce net avoidance behavior by fast-swimming organisms. The net was rapidly deployed from surface to target depth to avoid collecting from non-target depths, since the net does not include a closure device. The depth of each trawl was guided by a real-time pressure sensor (Simrad PX). Some tows targeted a single depth, and some were tow-yos, in which the net was towed up and down within a target layer. In the case of a tow-yo, the target depth is provided in the metadata table as a range. During spring and summer 2023 cruises, catches were fixed in 10% buffered formalin on deck. Starting in fall 2023 (cruise AR77), catches were split in half and halves preserved separately in 10% buffered formalin and 95% ethanol, whenever possible. Trawling was initiated in spring 2023 and is ongoing. &#13;
+Direct sampling of acoustic backscattering layers using nets provides taxonomic composition and size distributions necessary to establish acoustic classification of dominant scatterers. Multifrequency echosounders mounted on the ship were used to monitor real-time scattering layer structures and to determine layer depths to be targeted by nets. An Isaacs-Kidd Midwater Trawl (IKMT; Isaacs and Kidd 1953, https://vocab.nerc.ac.uk/collection/L22/current/NETT0071/) with 4-m&lt;sup&gt;2&lt;/sup&gt; mouth opening was towed at typical speeds of 3.5-4 knots in the vicinity of at least three NES-LTER stations including the station at the shelfbreak front, one station inshore of the front, and one station offshore of the front. Together the dark color of the net and hardware, the relatively high towing speed, and the minimal bridle to create a head wake reduce net avoidance behavior by fast-swimming organisms. The net was rapidly deployed from surface to target depth to avoid collecting from non-target depths, since the net does not include a closure device. The depth of each trawl was guided by a real-time pressure sensor (Simrad PX). Some tows targeted a single depth, and some were tow-yos, in which the net was towed up and down within a target layer. In the case of a tow-yo, the target depth is provided in the metadata table as a range. During spring and summer 2023 cruises, catches were fixed in 10% buffered formalin on deck. Starting in fall 2023 (cruise AR77), catches were split in half and halves preserved separately in 10% buffered formalin and 95% ethanol, whenever possible. Trawling was initiated in spring 2023 and is ongoing. &#13;
 &#13;
 # Lab Processing of Samples&#13;
 &#13;
@@ -7157,8 +7157,8 @@ In version 2, data from all four NES cruises in 2024 were added. This addition i
       <entityDescription>Net tow metadata</entityDescription>
       <physical>
         <objectName>nes-lter-trawl-transect-metadata-v3.csv</objectName>
-        <size unit="bytes">11003</size>
-        <authentication method="MD5">5846b628a37290018e2c3cd60674c93f</authentication>
+        <size unit="bytes">10997</size>
+        <authentication method="MD5">826c0788b11aba193da5a05e877d6cef</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
