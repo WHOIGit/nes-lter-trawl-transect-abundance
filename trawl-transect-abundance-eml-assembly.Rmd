@@ -69,6 +69,13 @@ Read abundance data table
 # abundance_24$verbatimIdentification <- gsub("Cyclothones", "Cyclothone", abundance_24$verbatimIdentification)
 # abundance_24$scientificName <- gsub("Cyclothones", "Cyclothone", abundance_24$scientificName)
 
+# remove Myctophid specific names with no data
+# TODO: remove Caridea too, pending confirmation
+abundance_new <- abundance_new |>
+  mutate(scientificName = case_when(family == "Myctophidae" & scientificName != "Myctophidae" ~ "remove", TRUE ~ scientificName)) |>
+  mutate(scientificName = case_when(verbatimIdentification == "Myctophidae Larva" ~ "remove", TRUE ~ scientificName)) |>
+  filter(scientificName != "remove")
+
 # correct spellings and change unaccepted names to accepted names
 abundance_new$scientificName <- gsub("Nematoscelis", "Hansarsia", abundance_new$scientificName) 
 abundance_new$verbatimIdentification <- gsub("Nematoscelis", "Hansarsia", abundance_new$verbatimIdentification) 
@@ -266,6 +273,8 @@ abundance_fam <- abundance_fam |> select(-family_ID, -rank, -family_record)
 abundance_fam <- abundance_fam |> 
   mutate(across(6:last_col(), ~ replace_na(.x, 0))) 
 # |>  replace_na(list(family = "", scientificName = "", scientificNameID = ""))
+
+sum(rowSums(abundance_fam[, 6:37], na.rm = TRUE) == 0)
 
 write_csv(abundance_fam,'nes-lter-trawl-transect-count-v3.csv', na = "NaN")
 
