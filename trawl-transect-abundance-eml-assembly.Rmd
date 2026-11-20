@@ -14,7 +14,7 @@ Libraries used
 # remotes::install_github("WHOIGit/ediutilities")
 
 library(EMLassemblyline)
-library(ediutilities)
+#library(ediutilities)
 library(here)
 library(lubridate)
 library(pander)
@@ -27,6 +27,7 @@ library(stringr)
 library(worrms)
 library(purrr)
 library(tibble)
+library(ggplot2)
 
 ```
 
@@ -276,7 +277,7 @@ abundance_fam <- abundance_fam |>
 
 sum(rowSums(abundance_fam[, 6:37], na.rm = TRUE) == 0)
 
-write_csv(abundance_fam,'nes-lter-trawl-transect-count-v3.csv', na = "NaN")
+write_csv(abundance_fam,'nes-lter-trawl-transect-count-v4.csv', na = "NaN")
 
 ```
 
@@ -354,6 +355,12 @@ meta_25$time_target_depth_start <- str_pad(meta_25$time_target_depth_start, widt
 
 meta_25$time_target_depth_stop <- str_pad(meta_25$time_target_depth_stop, width = 5, side = "left", pad = "0")
 
+# add negative sign to longitude (correct events AR92_5 and AR95_2)
+meta_25$decimalLongitudeStart <- as.numeric(meta_25$decimalLongitudeStart)
+meta_25$decimalLongitudeEnd <- as.numeric(meta_25$decimalLongitudeEnd)
+meta_25$decimalLongitudeStart <- -abs(meta_25$decimalLongitudeStart)
+meta_25$decimalLongitudeEnd <- -abs(meta_25$decimalLongitudeEnd)
+
 meta_25 <- meta_25 |> mutate_at(c("cast",
                                   "depth_bottom",
                                   "decimalLatitudeStart",
@@ -393,19 +400,44 @@ meta$time_exit_water <- str_pad(meta$time_exit_water, width = 5, side = "left", 
 # round wire out
 meta$max_wire_out <- round(meta$max_wire_out, 0)
 
-write_csv(meta,'nes-lter-trawl-transect-metadata-v3.csv')
+write_csv(meta,'nes-lter-trawl-transect-metadata-v4.csv')
 
 ```
+```{r}
+
+# Map check tow locations
+pad <- 0.15
+lon_lim <- range(meta$decimalLongitudeStart) + c(-pad*4, pad*4)
+lat_lim <- range(meta$decimalLatitudeStart) + c(-pad, pad*8)
+
+coast <- map_data('world')
+
+#options(repr.plot.width = 3, repr.plot.height = 4)
+
+ggplot() +
+  geom_point(data = meta, aes(x = decimalLongitudeStart, y = decimalLatitudeStart),
+             shape = 24, fill = 'white', color = 'black', size = 2) +
+  geom_point(data = meta, aes(x = decimalLongitudeEnd, y = decimalLatitudeEnd),
+             shape = 25, fill = 'yellow', color = 'black', size = 2) +
+  geom_polygon(data = coast, aes(x = long, y = lat, group = group),
+               fill = 'gray80', color = 'gray40', linewidth = 0.3) +
+  theme(panel.border = element_rect(color = "black", fill = NA, linewidth = 0.5)) +
+  #theme(text = element_text(size = 12)) +
+  coord_quickmap(xlim = lon_lim, ylim = lat_lim) +
+  labs(x = 'Longitude', y = 'Latitude')
+
+#ggsave('output/trawl_locations.png')
+
+```
+
 
 Generate basic summary of data table
 
 ```{r}
 # Just for inspecting the summary: change all character columns to factor
-DF <- meta
+DF <- meta[,1:22]
 DF[sapply(DF, is.character)] <- lapply(DF[sapply(DF, is.character)], as.factor)
 pander::pander(summary(DF))
-
-sort(unique(DF$scientificName))
 
 ```
 
@@ -413,18 +445,18 @@ Read the Excel metadata template and generate text templates used by
 EMLassemblyline
 
 ```{r}
-excel_to_template(here('trawl-transect-info-v3'), 'nes-lter-trawl-transect-v3', rights='CCBY', file_type=".md")
+excel_to_template(here('trawl-transect-info-v4'), 'nes-lter-trawl-transect-v4', rights='CCBY', file_type=".md")
 
-sheet_to_tsv('trawl-transect-info-v3.xlsx', 'ColumnHeadersCount', 'attributes_nes-lter-trawl-transect-count-v3.txt')
+sheet_to_tsv('trawl-transect-info-v4.xlsx', 'ColumnHeadersCount', 'attributes_nes-lter-trawl-transect-count-v4.txt')
 
-sheet_to_tsv('trawl-transect-info-v3.xlsx', 'ColumnHeadersMeta', 'attributes_nes-lter-trawl-transect-metadata-v3.txt')
+sheet_to_tsv('trawl-transect-info-v4.xlsx', 'ColumnHeadersMeta', 'attributes_nes-lter-trawl-transect-metadata-v4.txt')
 
-sheet_to_tsv('trawl-transect-info-v3.xlsx', 'CategoricalVariables', 'catvars_nes-lter-trawl-transect-count-v3.txt')         
+sheet_to_tsv('trawl-transect-info-v4.xlsx', 'CategoricalVariables', 'catvars_nes-lter-trawl-transect-count-v4.txt')         
 
 template_taxonomic_coverage(
   path = here(),
   data.path = here(),
-  taxa.table = "nes-lter-trawl-transect-count-v3.csv",
+  taxa.table = "nes-lter-trawl-transect-count-v4.csv",
   taxa.col = "scientificName",
   taxa.name.type = "scientific",
   taxa.authority = c(9, 3, 11),
@@ -437,13 +469,13 @@ Generate the package and insert the parent project node into the resulting EML
 
 ```{r}
 # generate EML
-pkg_id <- 'knb-lter-nes.34.3'
+pkg_id <- 'knb-lter-nes.34.4'
 
 make_eml(here(),
          dataset.title='Zooplankton and micronekton abundance using an Isaacs-Kidd Midwater trawl on Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect cruises, ongoing since 2023',
-         data.table= c('nes-lter-trawl-transect-count-v3.csv', 'nes-lter-trawl-transect-metadata-v3.csv'),
+         data.table= c('nes-lter-trawl-transect-count-v4.csv', 'nes-lter-trawl-transect-metadata-v4.csv'),
          data.table.description= c('Zooplankton and micronekton abundance', 'Net tow metadata'),
-         data.table.name = c('nes-lter-trawl-transect-abundance-v3', 'nes-lter-trawl-transect-metadata-v3'),
+         data.table.name = c('nes-lter-trawl-transect-abundance-v4', 'nes-lter-trawl-transect-metadata-v4'),
          temporal.coverage = temporal_coverage(meta$eventDateStart),
          geographic.description = "NES-LTER Transect",
          geographic.coordinates = geographic_coordinates(meta$decimalLatitudeStart, meta$decimalLongitudeStart),

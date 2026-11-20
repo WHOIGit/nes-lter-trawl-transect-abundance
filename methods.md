@@ -11,6 +11,8 @@ In the laboratory, organisms preserved in formalin were identified to the lowest
 Where possible, column headers correspond to Darwin Core terms. Package assembly was completed in R; see https://github.com/WHOIGit/nes-lter-trawl-transect-abundance for details. Average vessel tow speed is approximated from handwritten notes, and the value for a given sample may be either speed through the water or speed over ground. Taxonomic information, including verbatimID, was regularized for spelling and WORMS accepted identification, as well as life stage or other descriptor where relevant. 
 # Differences from Previous Version
 
+In version 4, the sign of longitude entries for events AR92\_5 and AR95\_2 was corrected to reflect locations in the western hemisphere. 
+
 In version 3, data from all four cruises in 2025 were added, adding 30 new taxa to the data set. The former column eventDate was adjusted to two columns to account for tows ending after midnight UTC. Further regularization was done with regard to spelling, accepted identification, family, and life stage or other descriptor.
 
 In version 2, data from all four NES cruises in 2024 were added. This addition included 33 taxa new to the data set. The lifeStage column included in version 1 was eliminated. The counts from event AR77_4 were all corrected by a factor of 2 in version 2. Some verbatimID entries were edited.

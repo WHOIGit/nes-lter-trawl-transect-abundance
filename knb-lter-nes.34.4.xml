@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-nes.34.3" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd" system="edi">
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-nes.34.4" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd" system="edi">
   <access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document">
     <allow>
       <principal>uid=NES,o=LTER,dc=ecoinformatics,dc=org</principal>
@@ -39,7 +39,7 @@
       <electronicMailAddress>sarah.zuidema@whoi.edu</electronicMailAddress>
       <userId directory="https://orcid.org">https://orcid.org/0009-0006-0311-0071</userId>
     </creator>
-    <pubDate>2026-11-16</pubDate>
+    <pubDate>2026-11-20</pubDate>
     <abstract>
       <para>During Northeast U.S. Shelf Long-Term Ecological Research (NES-LTER) Transect cruises, acoustic backscattering layers were identified using multifrequency echosounders and were targeted for collection of zooplankton and micronekton using an Isaacs-Kidd Midwater Trawl. On each cruise, trawling was conducted at a minimum of three stations, including the one at the shelfbreak front, one inshore of the front, and one offshore of the front. The catches from the trawls were preserved on ship and later identified to the lowest possible taxonomic level using a dissecting microscope. Each identified taxon was counted to provide net total abundance by taxon. Trawling was initiated in spring 2023 and is ongoing. 
 </para>
@@ -84,7 +84,7 @@
         <geographicDescription>NES-LTER Transect</geographicDescription>
         <boundingCoordinates>
           <westBoundingCoordinate>-70.93136</westBoundingCoordinate>
-          <eastBoundingCoordinate>70.88734</eastBoundingCoordinate>
+          <eastBoundingCoordinate>-70.86146</eastBoundingCoordinate>
           <northBoundingCoordinate>40.51669</northBoundingCoordinate>
           <southBoundingCoordinate>39.76171</southBoundingCoordinate>
         </boundingCoordinates>
@@ -942,10 +942,13 @@
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Mollusca</taxonRankValue>
+            <commonName>molluscs</commonName>
             <taxonId provider="http://marinespecies.org">51</taxonId>
             <taxonomicClassification>
               <taxonRankName>Class</taxonRankName>
               <taxonRankValue>Cephalopoda</taxonRankValue>
+              <commonName>cephalopods</commonName>
+              <commonName>squids, octopuses, nautilus, and ammonites</commonName>
               <taxonId provider="http://marinespecies.org">11707</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Subclass</taxonRankName>
@@ -985,6 +988,7 @@
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Mollusca</taxonRankValue>
+            <commonName>molluscs</commonName>
             <taxonId provider="http://marinespecies.org">51</taxonId>
             <taxonomicClassification>
               <taxonRankName>Class</taxonRankName>
@@ -1040,10 +1044,14 @@
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Mollusca</taxonRankValue>
+            <commonName>molluscs</commonName>
             <taxonId provider="http://marinespecies.org">51</taxonId>
             <taxonomicClassification>
               <taxonRankName>Class</taxonRankName>
               <taxonRankValue>Gastropoda</taxonRankValue>
+              <commonName>gastropods</commonName>
+              <commonName>snails</commonName>
+              <commonName>snails and slugs</commonName>
               <taxonId provider="http://marinespecies.org">101</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Subclass</taxonRankName>
@@ -4729,6 +4737,8 @@
                       <taxonomicClassification>
                         <taxonRankName>Order</taxonRankName>
                         <taxonRankValue>Decapoda</taxonRankValue>
+                        <commonName>decapods</commonName>
+                        <commonName>ten-footed</commonName>
                         <taxonId provider="http://marinespecies.org">1130</taxonId>
                         <taxonomicClassification>
                           <taxonRankName>Suborder</taxonRankName>
@@ -4737,6 +4747,7 @@
                           <taxonomicClassification>
                             <taxonRankName>Infraorder</taxonRankName>
                             <taxonRankValue>Brachyura</taxonRankValue>
+                            <commonName>crabs</commonName>
                             <taxonId provider="http://marinespecies.org">106673</taxonId>
                             <taxonomicClassification>
                               <taxonRankName>Section</taxonRankName>
@@ -4753,6 +4764,7 @@
                                   <taxonomicClassification>
                                     <taxonRankName>Family</taxonRankName>
                                     <taxonRankValue>Portunidae</taxonRankValue>
+                                    <commonName>swimming crabs</commonName>
                                     <taxonId provider="http://marinespecies.org">106763</taxonId>
                                   </taxonomicClassification>
                                 </taxonomicClassification>
@@ -4771,14 +4783,19 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Mollusca</taxonRankValue>
+            <commonName>molluscs</commonName>
             <taxonId provider="http://marinespecies.org">51</taxonId>
             <taxonomicClassification>
               <taxonRankName>Class</taxonRankName>
               <taxonRankValue>Gastropoda</taxonRankValue>
+              <commonName>gastropods</commonName>
+              <commonName>snails</commonName>
+              <commonName>snails and slugs</commonName>
               <taxonId provider="http://marinespecies.org">101</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Subclass</taxonRankName>
@@ -4811,6 +4828,7 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
@@ -4819,10 +4837,13 @@
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Tunicata</taxonRankValue>
+              <commonName>sea squirts</commonName>
+              <commonName>tunicates</commonName>
               <taxonId provider="http://marinespecies.org">146420</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Class</taxonRankName>
                 <taxonRankValue>Thaliacea</taxonRankValue>
+                <commonName>salps</commonName>
                 <taxonId provider="http://marinespecies.org">22626</taxonId>
                 <taxonomicClassification>
                   <taxonRankName>Order</taxonRankName>
@@ -4841,14 +4862,17 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Arthropoda</taxonRankValue>
+            <commonName>arthropods</commonName>
             <taxonId provider="http://marinespecies.org">1065</taxonId>
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Crustacea</taxonRankValue>
+              <commonName>crustaceans</commonName>
               <taxonId provider="http://marinespecies.org">1066</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Superclass</taxonRankName>
@@ -4865,10 +4889,15 @@
                     <taxonomicClassification>
                       <taxonRankName>Superorder</taxonRankName>
                       <taxonRankValue>Peracarida</taxonRankValue>
+                      <commonName>peracarids</commonName>
                       <taxonId provider="http://marinespecies.org">1090</taxonId>
                       <taxonomicClassification>
                         <taxonRankName>Order</taxonRankName>
                         <taxonRankValue>Amphipoda</taxonRankValue>
+                        <commonName>amphipods</commonName>
+                        <commonName>beach hoppers</commonName>
+                        <commonName>sand hoppers</commonName>
+                        <commonName>scuds and relatives</commonName>
                         <taxonId provider="http://marinespecies.org">1135</taxonId>
                         <taxonomicClassification>
                           <taxonRankName>Suborder</taxonRankName>
@@ -4911,6 +4940,7 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
@@ -4919,6 +4949,7 @@
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Vertebrata</taxonRankValue>
+              <commonName>vertebrates</commonName>
               <taxonId provider="http://marinespecies.org">146419</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Infraphylum</taxonRankName>
@@ -4931,6 +4962,7 @@
                   <taxonomicClassification>
                     <taxonRankName>Gigaclass</taxonRankName>
                     <taxonRankValue>Actinopterygii</taxonRankValue>
+                    <commonName>ray-finned fishes</commonName>
                     <taxonId provider="http://marinespecies.org">10194</taxonId>
                     <taxonomicClassification>
                       <taxonRankName>Superclass</taxonRankName>
@@ -4947,6 +4979,7 @@
                           <taxonomicClassification>
                             <taxonRankName>Family</taxonRankName>
                             <taxonRankValue>Scomberesocidae</taxonRankValue>
+                            <commonName>sauries</commonName>
                             <taxonId provider="http://marinespecies.org">125454</taxonId>
                             <taxonomicClassification>
                               <taxonRankName>Genus</taxonRankName>
@@ -4955,6 +4988,10 @@
                               <taxonomicClassification>
                                 <taxonRankName>Species</taxonRankName>
                                 <taxonRankValue>Scomberesox saurus</taxonRankValue>
+                                <commonName>Atlantic saury</commonName>
+                                <commonName>needlefish</commonName>
+                                <commonName>saury</commonName>
+                                <commonName>skipper</commonName>
                                 <taxonId provider="http://marinespecies.org">126392</taxonId>
                               </taxonomicClassification>
                             </taxonomicClassification>
@@ -4971,6 +5008,7 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
@@ -4979,6 +5017,7 @@
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Vertebrata</taxonRankValue>
+              <commonName>vertebrates</commonName>
               <taxonId provider="http://marinespecies.org">146419</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Infraphylum</taxonRankName>
@@ -4991,6 +5030,7 @@
                   <taxonomicClassification>
                     <taxonRankName>Gigaclass</taxonRankName>
                     <taxonRankValue>Actinopterygii</taxonRankValue>
+                    <commonName>ray-finned fishes</commonName>
                     <taxonId provider="http://marinespecies.org">10194</taxonId>
                     <taxonomicClassification>
                       <taxonRankName>Superclass</taxonRankName>
@@ -5011,6 +5051,7 @@
                             <taxonomicClassification>
                               <taxonRankName>Family</taxonRankName>
                               <taxonRankValue>Scopelarchidae</taxonRankValue>
+                              <commonName>pearleyes</commonName>
                               <taxonId provider="http://marinespecies.org">125448</taxonId>
                               <taxonomicClassification>
                                 <taxonRankName>Genus</taxonRankName>
@@ -5031,14 +5072,17 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Arthropoda</taxonRankValue>
+            <commonName>arthropods</commonName>
             <taxonId provider="http://marinespecies.org">1065</taxonId>
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Crustacea</taxonRankValue>
+              <commonName>crustaceans</commonName>
               <taxonId provider="http://marinespecies.org">1066</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Superclass</taxonRankName>
@@ -5059,6 +5103,8 @@
                       <taxonomicClassification>
                         <taxonRankName>Order</taxonRankName>
                         <taxonRankValue>Decapoda</taxonRankValue>
+                        <commonName>decapods</commonName>
+                        <commonName>ten-footed</commonName>
                         <taxonId provider="http://marinespecies.org">1130</taxonId>
                         <taxonomicClassification>
                           <taxonRankName>Suborder</taxonRankName>
@@ -5067,10 +5113,14 @@
                           <taxonomicClassification>
                             <taxonRankName>Infraorder</taxonRankName>
                             <taxonRankValue>Achelata</taxonRankValue>
+                            <commonName>bugs</commonName>
+                            <commonName>spiny lobsters</commonName>
                             <taxonId provider="http://marinespecies.org">383017</taxonId>
                             <taxonomicClassification>
                               <taxonRankName>Family</taxonRankName>
                               <taxonRankValue>Scyllaridae</taxonRankValue>
+                              <commonName>shovel-nosed lobsters</commonName>
+                              <commonName>slipper lobsters</commonName>
                               <taxonId provider="http://marinespecies.org">106795</taxonId>
                             </taxonomicClassification>
                           </taxonomicClassification>
@@ -5086,18 +5136,23 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Mollusca</taxonRankValue>
+            <commonName>molluscs</commonName>
             <taxonId provider="http://marinespecies.org">51</taxonId>
             <taxonomicClassification>
               <taxonRankName>Class</taxonRankName>
               <taxonRankValue>Cephalopoda</taxonRankValue>
+              <commonName>cephalopods</commonName>
+              <commonName>squids, octopuses, nautilus, and ammonites</commonName>
               <taxonId provider="http://marinespecies.org">11707</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Subclass</taxonRankName>
                 <taxonRankValue>Coleoidea</taxonRankValue>
+                <commonName>coleoids</commonName>
                 <taxonId provider="http://marinespecies.org">11709</taxonId>
                 <taxonomicClassification>
                   <taxonRankName>Superorder</taxonRankName>
@@ -5136,14 +5191,17 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Arthropoda</taxonRankValue>
+            <commonName>arthropods</commonName>
             <taxonId provider="http://marinespecies.org">1065</taxonId>
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Crustacea</taxonRankValue>
+              <commonName>crustaceans</commonName>
               <taxonId provider="http://marinespecies.org">1066</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Superclass</taxonRankName>
@@ -5164,10 +5222,13 @@
                       <taxonomicClassification>
                         <taxonRankName>Order</taxonRankName>
                         <taxonRankValue>Decapoda</taxonRankValue>
+                        <commonName>decapods</commonName>
+                        <commonName>ten-footed</commonName>
                         <taxonId provider="http://marinespecies.org">1130</taxonId>
                         <taxonomicClassification>
                           <taxonRankName>Suborder</taxonRankName>
                           <taxonRankValue>Dendrobranchiata</taxonRankValue>
+                          <commonName>prawns</commonName>
                           <taxonId provider="http://marinespecies.org">106669</taxonId>
                           <taxonomicClassification>
                             <taxonRankName>Superfamily</taxonRankName>
@@ -5176,6 +5237,7 @@
                             <taxonomicClassification>
                               <taxonRankName>Family</taxonRankName>
                               <taxonRankValue>Sergestidae</taxonRankValue>
+                              <commonName>sergestid shrimps</commonName>
                               <taxonId provider="http://marinespecies.org">106731</taxonId>
                             </taxonomicClassification>
                           </taxonomicClassification>
@@ -5191,14 +5253,17 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Arthropoda</taxonRankValue>
+            <commonName>arthropods</commonName>
             <taxonId provider="http://marinespecies.org">1065</taxonId>
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Crustacea</taxonRankValue>
+              <commonName>crustaceans</commonName>
               <taxonId provider="http://marinespecies.org">1066</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Superclass</taxonRankName>
@@ -5219,10 +5284,13 @@
                       <taxonomicClassification>
                         <taxonRankName>Order</taxonRankName>
                         <taxonRankValue>Decapoda</taxonRankValue>
+                        <commonName>decapods</commonName>
+                        <commonName>ten-footed</commonName>
                         <taxonId provider="http://marinespecies.org">1130</taxonId>
                         <taxonomicClassification>
                           <taxonRankName>Suborder</taxonRankName>
                           <taxonRankValue>Dendrobranchiata</taxonRankValue>
+                          <commonName>prawns</commonName>
                           <taxonId provider="http://marinespecies.org">106669</taxonId>
                           <taxonomicClassification>
                             <taxonRankName>Superfamily</taxonRankName>
@@ -5231,6 +5299,7 @@
                             <taxonomicClassification>
                               <taxonRankName>Family</taxonRankName>
                               <taxonRankValue>Solenoceridae</taxonRankValue>
+                              <commonName>solenocerid shrimps</commonName>
                               <taxonId provider="http://marinespecies.org">106729</taxonId>
                             </taxonomicClassification>
                           </taxonomicClassification>
@@ -5246,6 +5315,7 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
@@ -5254,6 +5324,7 @@
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Vertebrata</taxonRankValue>
+              <commonName>vertebrates</commonName>
               <taxonId provider="http://marinespecies.org">146419</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Infraphylum</taxonRankName>
@@ -5266,6 +5337,7 @@
                   <taxonomicClassification>
                     <taxonRankName>Gigaclass</taxonRankName>
                     <taxonRankValue>Actinopterygii</taxonRankValue>
+                    <commonName>ray-finned fishes</commonName>
                     <taxonId provider="http://marinespecies.org">10194</taxonId>
                     <taxonomicClassification>
                       <taxonRankName>Superclass</taxonRankName>
@@ -5282,6 +5354,7 @@
                           <taxonomicClassification>
                             <taxonRankName>Family</taxonRankName>
                             <taxonRankValue>Sternoptychidae</taxonRankValue>
+                            <commonName>marine hatchetfishes</commonName>
                             <taxonId provider="http://marinespecies.org">125603</taxonId>
                             <taxonomicClassification>
                               <taxonRankName>Subfamily</taxonRankName>
@@ -5294,6 +5367,11 @@
                                 <taxonomicClassification>
                                   <taxonRankName>Species</taxonRankName>
                                   <taxonRankValue>Argyropelecus hemigymnus</taxonRankValue>
+                                  <commonName>half-naked hatchet fish</commonName>
+                                  <commonName>Half-naked hatchetfish</commonName>
+                                  <commonName>hatchet-fish</commonName>
+                                  <commonName>short silver hatchetfish</commonName>
+                                  <commonName>Spurred hatchetfish</commonName>
                                   <taxonId provider="http://marinespecies.org">127309</taxonId>
                                 </taxonomicClassification>
                               </taxonomicClassification>
@@ -5311,6 +5389,7 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
@@ -5319,6 +5398,7 @@
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Vertebrata</taxonRankValue>
+              <commonName>vertebrates</commonName>
               <taxonId provider="http://marinespecies.org">146419</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Infraphylum</taxonRankName>
@@ -5331,6 +5411,7 @@
                   <taxonomicClassification>
                     <taxonRankName>Gigaclass</taxonRankName>
                     <taxonRankValue>Actinopterygii</taxonRankValue>
+                    <commonName>ray-finned fishes</commonName>
                     <taxonId provider="http://marinespecies.org">10194</taxonId>
                     <taxonomicClassification>
                       <taxonRankName>Superclass</taxonRankName>
@@ -5347,6 +5428,7 @@
                           <taxonomicClassification>
                             <taxonRankName>Family</taxonRankName>
                             <taxonRankValue>Sternoptychidae</taxonRankValue>
+                            <commonName>marine hatchetfishes</commonName>
                             <taxonId provider="http://marinespecies.org">125603</taxonId>
                             <taxonomicClassification>
                               <taxonRankName>Subfamily</taxonRankName>
@@ -5371,6 +5453,7 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
@@ -5379,6 +5462,7 @@
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Vertebrata</taxonRankValue>
+              <commonName>vertebrates</commonName>
               <taxonId provider="http://marinespecies.org">146419</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Infraphylum</taxonRankName>
@@ -5391,6 +5475,7 @@
                   <taxonomicClassification>
                     <taxonRankName>Gigaclass</taxonRankName>
                     <taxonRankValue>Actinopterygii</taxonRankValue>
+                    <commonName>ray-finned fishes</commonName>
                     <taxonId provider="http://marinespecies.org">10194</taxonId>
                     <taxonomicClassification>
                       <taxonRankName>Superclass</taxonRankName>
@@ -5407,6 +5492,8 @@
                           <taxonomicClassification>
                             <taxonRankName>Family</taxonRankName>
                             <taxonRankValue>Stomiidae</taxonRankValue>
+                            <commonName>barbeled dragonfishes</commonName>
+                            <commonName>scaly dragonfishes</commonName>
                             <taxonId provider="http://marinespecies.org">125604</taxonId>
                             <taxonomicClassification>
                               <taxonRankName>Subfamily</taxonRankName>
@@ -5436,6 +5523,7 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
@@ -5444,6 +5532,7 @@
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Vertebrata</taxonRankValue>
+              <commonName>vertebrates</commonName>
               <taxonId provider="http://marinespecies.org">146419</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Infraphylum</taxonRankName>
@@ -5456,6 +5545,7 @@
                   <taxonomicClassification>
                     <taxonRankName>Gigaclass</taxonRankName>
                     <taxonRankValue>Actinopterygii</taxonRankValue>
+                    <commonName>ray-finned fishes</commonName>
                     <taxonId provider="http://marinespecies.org">10194</taxonId>
                     <taxonomicClassification>
                       <taxonRankName>Superclass</taxonRankName>
@@ -5472,6 +5562,8 @@
                           <taxonomicClassification>
                             <taxonRankName>Family</taxonRankName>
                             <taxonRankValue>Stomiidae</taxonRankValue>
+                            <commonName>barbeled dragonfishes</commonName>
+                            <commonName>scaly dragonfishes</commonName>
                             <taxonId provider="http://marinespecies.org">125604</taxonId>
                             <taxonomicClassification>
                               <taxonRankName>Subfamily</taxonRankName>
@@ -5484,6 +5576,11 @@
                                 <taxonomicClassification>
                                   <taxonRankName>Species</taxonRankName>
                                   <taxonRankValue>Chauliodus sloani</taxonRankValue>
+                                  <commonName>Manylight fangfish</commonName>
+                                  <commonName>manylight viperfish</commonName>
+                                  <commonName>Sloane's viperfish</commonName>
+                                  <commonName>Sloan's fangfish</commonName>
+                                  <commonName>Sloan's viperfish</commonName>
                                   <taxonId provider="http://marinespecies.org">127338</taxonId>
                                 </taxonomicClassification>
                               </taxonomicClassification>
@@ -5501,14 +5598,17 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Arthropoda</taxonRankValue>
+            <commonName>arthropods</commonName>
             <taxonId provider="http://marinespecies.org">1065</taxonId>
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Crustacea</taxonRankValue>
+              <commonName>crustaceans</commonName>
               <taxonId provider="http://marinespecies.org">1066</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Superclass</taxonRankName>
@@ -5529,6 +5629,8 @@
                       <taxonomicClassification>
                         <taxonRankName>Order</taxonRankName>
                         <taxonRankValue>Decapoda</taxonRankValue>
+                        <commonName>decapods</commonName>
+                        <commonName>ten-footed</commonName>
                         <taxonId provider="http://marinespecies.org">1130</taxonId>
                         <taxonomicClassification>
                           <taxonRankName>Suborder</taxonRankName>
@@ -5537,6 +5639,8 @@
                           <taxonomicClassification>
                             <taxonRankName>Infraorder</taxonRankName>
                             <taxonRankValue>Achelata</taxonRankValue>
+                            <commonName>bugs</commonName>
+                            <commonName>spiny lobsters</commonName>
                             <taxonId provider="http://marinespecies.org">383017</taxonId>
                           </taxonomicClassification>
                         </taxonomicClassification>
@@ -5551,14 +5655,17 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Arthropoda</taxonRankValue>
+            <commonName>arthropods</commonName>
             <taxonId provider="http://marinespecies.org">1065</taxonId>
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Crustacea</taxonRankValue>
+              <commonName>crustaceans</commonName>
               <taxonId provider="http://marinespecies.org">1066</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Superclass</taxonRankName>
@@ -5575,10 +5682,15 @@
                     <taxonomicClassification>
                       <taxonRankName>Superorder</taxonRankName>
                       <taxonRankValue>Peracarida</taxonRankValue>
+                      <commonName>peracarids</commonName>
                       <taxonId provider="http://marinespecies.org">1090</taxonId>
                       <taxonomicClassification>
                         <taxonRankName>Order</taxonRankName>
                         <taxonRankValue>Amphipoda</taxonRankValue>
+                        <commonName>amphipods</commonName>
+                        <commonName>beach hoppers</commonName>
+                        <commonName>sand hoppers</commonName>
+                        <commonName>scuds and relatives</commonName>
                         <taxonId provider="http://marinespecies.org">1135</taxonId>
                       </taxonomicClassification>
                     </taxonomicClassification>
@@ -5591,14 +5703,17 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Arthropoda</taxonRankValue>
+            <commonName>arthropods</commonName>
             <taxonId provider="http://marinespecies.org">1065</taxonId>
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Crustacea</taxonRankValue>
+              <commonName>crustaceans</commonName>
               <taxonId provider="http://marinespecies.org">1066</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Superclass</taxonRankName>
@@ -5619,6 +5734,8 @@
                       <taxonomicClassification>
                         <taxonRankName>Order</taxonRankName>
                         <taxonRankValue>Decapoda</taxonRankValue>
+                        <commonName>decapods</commonName>
+                        <commonName>ten-footed</commonName>
                         <taxonId provider="http://marinespecies.org">1130</taxonId>
                         <taxonomicClassification>
                           <taxonRankName>Suborder</taxonRankName>
@@ -5627,6 +5744,9 @@
                           <taxonomicClassification>
                             <taxonRankName>Infraorder</taxonRankName>
                             <taxonRankValue>Anomura</taxonRankValue>
+                            <commonName>hermit crabs</commonName>
+                            <commonName>porcelain crabs</commonName>
+                            <commonName>squat lobsters</commonName>
                             <taxonId provider="http://marinespecies.org">106671</taxonId>
                           </taxonomicClassification>
                         </taxonomicClassification>
@@ -5641,14 +5761,17 @@
         <taxonomicClassification>
           <taxonRankName>Kingdom</taxonRankName>
           <taxonRankValue>Animalia</taxonRankValue>
+          <commonName>animals</commonName>
           <taxonId provider="http://marinespecies.org">2</taxonId>
           <taxonomicClassification>
             <taxonRankName>Phylum</taxonRankName>
             <taxonRankValue>Arthropoda</taxonRankValue>
+            <commonName>arthropods</commonName>
             <taxonId provider="http://marinespecies.org">1065</taxonId>
             <taxonomicClassification>
               <taxonRankName>Subphylum</taxonRankName>
               <taxonRankValue>Crustacea</taxonRankValue>
+              <commonName>crustaceans</commonName>
               <taxonId provider="http://marinespecies.org">1066</taxonId>
               <taxonomicClassification>
                 <taxonRankName>Superclass</taxonRankName>
@@ -6201,6 +6324,8 @@ In the laboratory, organisms preserved in formalin were identified to the lowest
 Where possible, column headers correspond to Darwin Core terms. Package assembly was completed in R; see https://github.com/WHOIGit/nes-lter-trawl-transect-abundance for details. Average vessel tow speed is approximated from handwritten notes, and the value for a given sample may be either speed through the water or speed over ground. Taxonomic information, including verbatimID, was regularized for spelling and WORMS accepted identification, as well as life stage or other descriptor where relevant. &#13;
 # Differences from Previous Version&#13;
 &#13;
+In version 4, the sign of longitude entries for events AR92\_5 and AR95\_2 was corrected to reflect locations in the western hemisphere. &#13;
+&#13;
 In version 3, data from all four cruises in 2025 were added, adding 30 new taxa to the data set. The former column eventDate was adjusted to two columns to account for tows ending after midnight UTC. Further regularization was done with regard to spelling, accepted identification, family, and life stage or other descriptor.&#13;
 &#13;
 In version 2, data from all four NES cruises in 2024 were added. This addition included 33 taxa new to the data set. The lifeStage column included in version 1 was eliminated. The counts from event AR77_4 were all corrected by a factor of 2 in version 2. Some verbatimID entries were edited.&#13;
@@ -6321,10 +6446,10 @@ In version 2, data from all four NES cruises in 2024 were added. This addition i
       </relatedProject>
     </project>
     <dataTable>
-      <entityName>nes-lter-trawl-transect-abundance-v3</entityName>
+      <entityName>nes-lter-trawl-transect-abundance-v4</entityName>
       <entityDescription>Zooplankton and micronekton abundance</entityDescription>
       <physical>
-        <objectName>nes-lter-trawl-transect-count-v3.csv</objectName>
+        <objectName>nes-lter-trawl-transect-count-v4.csv</objectName>
         <size unit="bytes">23325</size>
         <authentication method="MD5">552826286a55fd3631d2f70c460df8a9</authentication>
         <dataFormat>
@@ -7030,12 +7155,12 @@ In version 2, data from all four NES cruises in 2024 were added. This addition i
       <numberOfRecords>146</numberOfRecords>
     </dataTable>
     <dataTable>
-      <entityName>nes-lter-trawl-transect-metadata-v3</entityName>
+      <entityName>nes-lter-trawl-transect-metadata-v4</entityName>
       <entityDescription>Net tow metadata</entityDescription>
       <physical>
-        <objectName>nes-lter-trawl-transect-metadata-v3.csv</objectName>
-        <size unit="bytes">10997</size>
-        <authentication method="MD5">826c0788b11aba193da5a05e877d6cef</authentication>
+        <objectName>nes-lter-trawl-transect-metadata-v4.csv</objectName>
+        <size unit="bytes">11001</size>
+        <authentication method="MD5">d47338781ce32c9fa846e67da69a818d</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -7200,7 +7325,7 @@ In version 2, data from all four NES cruises in 2024 were added. This addition i
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">-70.93136</minimum>
-                  <maximum exclusive="false">70.887339</maximum>
+                  <maximum exclusive="false">-70.86146</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -7238,7 +7363,7 @@ In version 2, data from all four NES cruises in 2024 were added. This addition i
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">-70.97708</minimum>
-                  <maximum exclusive="false">70.888472</maximum>
+                  <maximum exclusive="false">-70.82594</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
