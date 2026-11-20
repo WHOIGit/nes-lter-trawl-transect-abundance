@@ -28,6 +28,7 @@ library(worrms)
 library(purrr)
 library(tibble)
 library(ggplot2)
+library(writexl)
 
 ```
 
@@ -280,6 +281,16 @@ sum(rowSums(abundance_fam[, 6:37], na.rm = TRUE) == 0)
 write_csv(abundance_fam,'nes-lter-trawl-transect-count-v4.csv', na = "NaN")
 
 ```
+```{r}
+
+# output data sheet for next year's data entry
+
+count_sheet <- abundance_fam[,1:5]
+count_sheet <- count_sheet[,-4]
+write_xlsx(count_sheet, "output/NESLTER_trawl_count_sheet_for_2026.xlsx")
+
+```
+
 
 Read metadata 
 
@@ -403,6 +414,15 @@ meta$max_wire_out <- round(meta$max_wire_out, 0)
 write_csv(meta,'nes-lter-trawl-transect-metadata-v4.csv')
 
 ```
+```{r}
+
+# output data sheet for next year's data entry
+
+meta_sheet <- meta[1,]
+write_xlsx(meta_sheet, "output/NESLTER_trawl_metadata_sheet.xlsx")
+
+```
+
 ```{r}
 
 # Map check tow locations
